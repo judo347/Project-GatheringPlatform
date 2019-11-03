@@ -6,4 +6,5 @@ func _on_Killzone_ground_body_entered(body):
 	if !(get_parent().get_parent().get_node("Player") == body):
 		return
 	
-	get_parent().get_parent().get_node("Player").queue_free()
+	# get_parent().get_parent().get_node("Player").queue_free()
+	get_tree().change_scene("gamefiles/scenes/World.tscn")
