@@ -3,7 +3,7 @@ extends KinematicBody2D
 const UP = Vector2(0, -1)
 const GRAVITY_ACC = 20
 const MOVEMENTSPEED = 400
-const JUMP_HEIGHT = -500
+const JUMP_HEIGHT = -800
 
 var motion = Vector2()
 
@@ -61,3 +61,6 @@ func _swap_sprites(one, two):
 	two.texture = tempTexture
 	
 	pass
+	
+func _kill_player():
+	queue_free()
