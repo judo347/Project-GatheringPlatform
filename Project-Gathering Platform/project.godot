@@ -16,6 +16,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Project-Gathering Platform"
+run/main_scene="res://gamefiles/scenes/World.tscn"
 config/icon="res://icon.png"
 
 [rendering]

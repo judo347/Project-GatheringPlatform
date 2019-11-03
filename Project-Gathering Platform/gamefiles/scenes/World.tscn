@@ -1,0 +1,83 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://gamefiles/scripts/playerKinematicBody.gd" type="Script" id=1]
+[ext_resource path="res://resources/01/Character001.png" type="Texture" id=2]
+[ext_resource path="res://resources/01/Tile001.png" type="Texture" id=3]
+[ext_resource path="res://resources/01/Tile002.png" type="Texture" id=4]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 4, 4 )
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 96, 16 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 96, 32 )
+
+[node name="World" type="Node"]
+
+[node name="Player" type="KinematicBody2D" parent="."]
+position = Vector2( 320, 160 )
+script = ExtResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="Player"]
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+scale = Vector2( 16, 16 )
+shape = SubResource( 2 )
+
+[node name="Wall32x32" type="StaticBody2D" parent="."]
+position = Vector2( 320, 352 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Wall32x32"]
+position = Vector2( 0, -16 )
+texture = ExtResource( 3 )
+
+[node name="Sprite2" type="Sprite" parent="Wall32x32"]
+position = Vector2( 96, -16 )
+texture = ExtResource( 3 )
+
+[node name="Sprite3" type="Sprite" parent="Wall32x32"]
+position = Vector2( 64, -16 )
+texture = ExtResource( 3 )
+
+[node name="Sprite4" type="Sprite" parent="Wall32x32"]
+position = Vector2( -64, -16 )
+texture = ExtResource( 3 )
+
+[node name="Sprite5" type="Sprite" parent="Wall32x32"]
+position = Vector2( -32, -16 )
+texture = ExtResource( 3 )
+
+[node name="Sprite6" type="Sprite" parent="Wall32x32"]
+position = Vector2( 32, -16 )
+texture = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall32x32"]
+position = Vector2( 16, -16 )
+shape = SubResource( 1 )
+
+[node name="Wall64x64" type="StaticBody2D" parent="."]
+position = Vector2( 480, 448 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Wall64x64"]
+texture = ExtResource( 4 )
+
+[node name="Sprite2" type="Sprite" parent="Wall64x64"]
+position = Vector2( 64, 0 )
+texture = ExtResource( 4 )
+
+[node name="Sprite3" type="Sprite" parent="Wall64x64"]
+position = Vector2( 128, 0 )
+texture = ExtResource( 4 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall64x64"]
+position = Vector2( 64, 0 )
+shape = SubResource( 3 )
