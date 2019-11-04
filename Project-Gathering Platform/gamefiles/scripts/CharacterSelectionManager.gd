@@ -6,6 +6,13 @@ var isPlayerCollidingWithCharSlot_three = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	
+	# Hide the slot which the character is
+	match playerData.currentCharacter:
+		enums.CharacterEnum.ONE: get_node("Slot1/Sprite").hide()
+		enums.CharacterEnum.TWO: get_node("Slot2/Sprite").hide()
+		enums.CharacterEnum.THREE: get_node("Slot3/Sprite").hide()
+	
 	pass # Replace with function body.
 
 func _on_Area2D_body_entered(body, extra_arg_0):

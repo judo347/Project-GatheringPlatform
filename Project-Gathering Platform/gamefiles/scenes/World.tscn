@@ -1,12 +1,13 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://gamefiles/scenes/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://gamefiles/scripts/CharacterSelectionManager.gd" type="Script" id=2]
-[ext_resource path="res://resources/01/Character002.png" type="Texture" id=3]
-[ext_resource path="res://resources/01/Character003.png" type="Texture" id=4]
-[ext_resource path="res://gamefiles/scripts/Portal.gd" type="Script" id=5]
-[ext_resource path="res://resources/01/Portal001.png" type="Texture" id=6]
-[ext_resource path="res://gamefiles/tilesets/tileset02.tres" type="TileSet" id=7]
+[ext_resource path="res://resources/01/Character001.png" type="Texture" id=3]
+[ext_resource path="res://resources/01/Character002.png" type="Texture" id=4]
+[ext_resource path="res://resources/01/Character003.png" type="Texture" id=5]
+[ext_resource path="res://gamefiles/scripts/Portal.gd" type="Script" id=6]
+[ext_resource path="res://resources/01/Portal001.png" type="Texture" id=7]
+[ext_resource path="res://gamefiles/tilesets/tileset02.tres" type="TileSet" id=8]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 832, 32 )
@@ -63,6 +64,7 @@ scale = Vector2( 2, 2 )
 shape = SubResource( 3 )
 
 [node name="Sprite" type="Sprite" parent="CharacterSelection/Slot1"]
+texture = ExtResource( 3 )
 
 [node name="Slot2" type="Area2D" parent="CharacterSelection"]
 position = Vector2( -512, 320 )
@@ -75,7 +77,7 @@ scale = Vector2( 2, 2 )
 shape = SubResource( 3 )
 
 [node name="Sprite" type="Sprite" parent="CharacterSelection/Slot2"]
-texture = ExtResource( 3 )
+texture = ExtResource( 4 )
 
 [node name="Slot3" type="Area2D" parent="CharacterSelection"]
 position = Vector2( -352, 320 )
@@ -88,23 +90,23 @@ scale = Vector2( 2, 2 )
 shape = SubResource( 3 )
 
 [node name="Sprite" type="Sprite" parent="CharacterSelection/Slot3"]
-texture = ExtResource( 4 )
+texture = ExtResource( 5 )
 
 [node name="Portal" type="Area2D" parent="."]
 position = Vector2( 672, 64 )
-script = ExtResource( 5 )
+script = ExtResource( 6 )
 __meta__ = {
 "_edit_group_": true
 }
 
 [node name="Sprite" type="Sprite" parent="Portal"]
-texture = ExtResource( 6 )
+texture = ExtResource( 7 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Portal"]
 shape = SubResource( 4 )
 
 [node name="TileMap" type="TileMap" parent="."]
-tile_set = ExtResource( 7 )
+tile_set = ExtResource( 8 )
 format = 1
 tile_data = PoolIntArray( 131079, 0, 0, 131080, 0, 0, 131081, 0, 0, 131082, 0, 0, 131083, 0, 0, 458740, 0, 0, 458741, 0, 0, 458742, 0, 0, 458743, 0, 0, 458744, 0, 0, 458745, 0, 0, 458746, 0, 0, 458747, 0, 0, 458748, 0, 0, 458749, 0, 0, 458750, 0, 0, 458751, 0, 0, 393216, 0, 0, 393217, 0, 0, 393218, 0, 0, 393219, 0, 0, 393220, 0, 0, 393221, 0, 0, 393222, 0, 0, 393223, 0, 0, 393224, 0, 0, 393225, 0, 0, 393226, 0, 0, 393227, 0, 0 )
 [connection signal="body_entered" from="CharacterSelection/Slot1" to="CharacterSelection" method="_on_Area2D_body_entered" binds= [ 1 ]]

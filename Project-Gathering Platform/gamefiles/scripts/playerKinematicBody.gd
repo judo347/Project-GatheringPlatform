@@ -50,16 +50,42 @@ func _select_character():
 	
 	if isCollidingCharSlotOne:
 		# Change the current character to character one
-		playerData.texture = global_variables.player_character_texture_one
+		change_character(enums.CharacterEnum.ONE)
 	elif isCollidingCharSlotTwo:
 		# Change the current character to character two
-		playerData.texture = global_variables.player_character_texture_two
+		change_character(enums.CharacterEnum.TWO)
 	elif isCollidingCharSlotThree:
 		# Change the current character to character two
-		playerData.texture = global_variables.player_character_texture_three
+		change_character(enums.CharacterEnum.THREE)
 	
 	if isCollidingCharSlotOne || isCollidingCharSlotTwo || isCollidingCharSlotThree:
 		get_node("Sprite").texture = playerData.texture
+
+func change_character(type):
+	
+	# Place the de-seleted char back into its slot
+	match playerData.currentCharacter:
+		enums.CharacterEnum.ONE:
+			get_parent().get_node("CharacterSelection/Slot1/Sprite").show()
+		enums.CharacterEnum.TWO:
+			get_parent().get_node("CharacterSelection/Slot2/Sprite").show()
+		enums.CharacterEnum.THREE:
+			get_parent().get_node("CharacterSelection/Slot3/Sprite").show()
+	
+	# Change to the new character
+	match type:
+		enums.CharacterEnum.ONE:
+			playerData.texture = global_variables.player_character_texture_one
+			get_parent().get_node("CharacterSelection/Slot1/Sprite").hide()
+		enums.CharacterEnum.TWO:
+			playerData.texture = global_variables.player_character_texture_two
+			get_parent().get_node("CharacterSelection/Slot2/Sprite").hide()
+		enums.CharacterEnum.THREE:
+			playerData.texture = global_variables.player_character_texture_three
+			get_parent().get_node("CharacterSelection/Slot3/Sprite").hide()
+	
+	# Save the new character type
+	playerData.currentCharacter = type
 
 func _kill_player():
 	queue_free()
