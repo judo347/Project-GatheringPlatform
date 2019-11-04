@@ -9,9 +9,9 @@ var motion = Vector2()
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	get_node("Sprite").texture = playerData.texture
 	
-	pass # Replace with function body.
-
+	pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
@@ -42,25 +42,24 @@ func _physics_process(delta):
 	
 func _select_character():
 	
-	var isCollidingCharOne = get_parent().get_node("CharacterSelection").isPlayerCollidingWithCharSlot_one
-	var isCollidingCharTwo = get_parent().get_node("CharacterSelection").isPlayerCollidingWithCharSlot_two
+	var isCollidingCharSlotOne = get_parent().get_node("CharacterSelection").isPlayerCollidingWithCharSlot_one
+	var isCollidingCharSlotTwo = get_parent().get_node("CharacterSelection").isPlayerCollidingWithCharSlot_two
+	var isCollidingCharSlotThree = get_parent().get_node("CharacterSelection").isPlayerCollidingWithCharSlot_three
 	
-	if isCollidingCharOne:
+	# TODO Check if the character slot is empty
+	
+	if isCollidingCharSlotOne:
 		# Change the current character to character one
-		_swap_sprites(get_node("Sprite"), get_parent().get_node("CharacterSelection/Slot1").get_node("Sprite"))
-	elif isCollidingCharTwo:
+		playerData.texture = global_variables.player_character_texture_one
+	elif isCollidingCharSlotTwo:
 		# Change the current character to character two
-		_swap_sprites(get_node("Sprite"), get_parent().get_node("CharacterSelection/Slot2").get_node("Sprite"))
+		playerData.texture = global_variables.player_character_texture_two
+	elif isCollidingCharSlotThree:
+		# Change the current character to character two
+		playerData.texture = global_variables.player_character_texture_three
 	
-	pass
-	
-func _swap_sprites(one, two):
-	var tempTexture = one.texture
-	
-	one.texture = two.texture
-	two.texture = tempTexture
-	
-	pass
-	
+	if isCollidingCharSlotOne || isCollidingCharSlotTwo || isCollidingCharSlotThree:
+		get_node("Sprite").texture = playerData.texture
+
 func _kill_player():
 	queue_free()

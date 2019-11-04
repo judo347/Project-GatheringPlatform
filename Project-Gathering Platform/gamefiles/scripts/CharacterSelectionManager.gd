@@ -1,20 +1,12 @@
 extends Node2D
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
-
 var isPlayerCollidingWithCharSlot_one = false
 var isPlayerCollidingWithCharSlot_two = false
+var isPlayerCollidingWithCharSlot_three = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
-
 
 func _on_Area2D_body_entered(body, extra_arg_0):
 	
@@ -29,7 +21,9 @@ func _on_Area2D_body_entered(body, extra_arg_0):
 		
 	if extra_arg_0 == 2:
 		isPlayerCollidingWithCharSlot_two = true
-
+		
+	if extra_arg_0 == 3:
+		isPlayerCollidingWithCharSlot_three = true
 
 func _on_Area2D_body_exited(body, extra_arg_0):
 	
@@ -43,4 +37,7 @@ func _on_Area2D_body_exited(body, extra_arg_0):
 		isPlayerCollidingWithCharSlot_one = false
 		
 	if extra_arg_0 == 2:
+		isPlayerCollidingWithCharSlot_two = false
+		
+	if extra_arg_0 == 3:
 		isPlayerCollidingWithCharSlot_two = false

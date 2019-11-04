@@ -8,16 +8,16 @@
 [ext_resource path="res://resources/01/Portal001.png" type="Texture" id=6]
 [ext_resource path="res://gamefiles/tilesets/tileset02.tres" type="TileSet" id=7]
 
-[sub_resource type="RectangleShape2D" id=5]
+[sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 832, 32 )
 
-[sub_resource type="RectangleShape2D" id=4]
+[sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 32, 448 )
 
-[sub_resource type="RectangleShape2D" id=7]
+[sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 32, 32 )
 
-[sub_resource type="RectangleShape2D" id=8]
+[sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 64, 64 )
 
 [node name="World" type="Node"]
@@ -35,25 +35,24 @@ editor/display_folded = true
 
 [node name="Bottom" type="CollisionShape2D" parent="OutOfBounds/StaticBody2D"]
 position = Vector2( 0, 480 )
-shape = SubResource( 5 )
+shape = SubResource( 1 )
 
 [node name="Left" type="CollisionShape2D" parent="OutOfBounds/StaticBody2D"]
 position = Vector2( -800, 0 )
-shape = SubResource( 4 )
+shape = SubResource( 2 )
 
 [node name="Right" type="CollisionShape2D" parent="OutOfBounds/StaticBody2D"]
 position = Vector2( 800, 0 )
-shape = SubResource( 4 )
+shape = SubResource( 2 )
 
 [node name="Top" type="CollisionShape2D" parent="OutOfBounds/StaticBody2D"]
 position = Vector2( 0, -480 )
-shape = SubResource( 5 )
+shape = SubResource( 1 )
 
 [node name="CharacterSelection" type="Node2D" parent="."]
 script = ExtResource( 2 )
 
 [node name="Slot1" type="Area2D" parent="CharacterSelection"]
-editor/display_folded = true
 position = Vector2( -672, 320 )
 __meta__ = {
 "_edit_group_": true
@@ -61,13 +60,11 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterSelection/Slot1"]
 scale = Vector2( 2, 2 )
-shape = SubResource( 7 )
+shape = SubResource( 3 )
 
 [node name="Sprite" type="Sprite" parent="CharacterSelection/Slot1"]
-texture = ExtResource( 3 )
 
 [node name="Slot2" type="Area2D" parent="CharacterSelection"]
-editor/display_folded = true
 position = Vector2( -512, 320 )
 __meta__ = {
 "_edit_group_": true
@@ -75,9 +72,22 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterSelection/Slot2"]
 scale = Vector2( 2, 2 )
-shape = SubResource( 7 )
+shape = SubResource( 3 )
 
 [node name="Sprite" type="Sprite" parent="CharacterSelection/Slot2"]
+texture = ExtResource( 3 )
+
+[node name="Slot3" type="Area2D" parent="CharacterSelection"]
+position = Vector2( -352, 320 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterSelection/Slot3"]
+scale = Vector2( 2, 2 )
+shape = SubResource( 3 )
+
+[node name="Sprite" type="Sprite" parent="CharacterSelection/Slot3"]
 texture = ExtResource( 4 )
 
 [node name="Portal" type="Area2D" parent="."]
@@ -91,7 +101,7 @@ __meta__ = {
 texture = ExtResource( 6 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Portal"]
-shape = SubResource( 8 )
+shape = SubResource( 4 )
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource( 7 )
@@ -101,3 +111,5 @@ tile_data = PoolIntArray( 131079, 0, 0, 131080, 0, 0, 131081, 0, 0, 131082, 0, 0
 [connection signal="body_exited" from="CharacterSelection/Slot1" to="CharacterSelection" method="_on_Area2D_body_exited" binds= [ 1 ]]
 [connection signal="body_entered" from="CharacterSelection/Slot2" to="CharacterSelection" method="_on_Area2D_body_entered" binds= [ 2 ]]
 [connection signal="body_exited" from="CharacterSelection/Slot2" to="CharacterSelection" method="_on_Area2D_body_exited" binds= [ 2 ]]
+[connection signal="body_entered" from="CharacterSelection/Slot3" to="CharacterSelection" method="_on_Area2D_body_entered" binds= [ 3 ]]
+[connection signal="body_exited" from="CharacterSelection/Slot3" to="CharacterSelection" method="_on_Area2D_body_exited" binds= [ 3 ]]
