@@ -19,7 +19,7 @@ func _physics_process(delta):
 	# Trigger character selection check and action
 	if Input.is_action_just_pressed("ui_action"):
 		_select_character()
-	
+		interactable_object()
 	
 	motion.y += GRAVITY_ACC
 	
@@ -40,6 +40,11 @@ func _physics_process(delta):
 	
 	pass
 	
+func interactable_object():
+	
+	if get_parent().get_node("Benches").is_player_touching_converter:
+		get_parent().get_node("UImaster").show_MaterialConverter()
+
 func _select_character():
 	
 	var isCollidingCharSlotOne = get_parent().get_node("CharacterSelection").isPlayerCollidingWithCharSlot_one
