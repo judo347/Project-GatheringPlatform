@@ -5,6 +5,11 @@ var material_amount = global_variables.material_default_yield
 
 func set_material_type(type):
 	material_type = type
+	# Change texture to match type
+	match type:
+		enums.MaterialEnum.GRASS: get_node("Sprite").texture = global_variables.material_one_grass_texture
+		enums.MaterialEnum.STONE: get_node("Sprite").texture = global_variables.material_two_stone_texture
+		enums.MaterialEnum.WOOD: get_node("Sprite").texture = global_variables.material_three_wood_texture
 
 func set_material_yeild(amount):
 	material_amount = amount
