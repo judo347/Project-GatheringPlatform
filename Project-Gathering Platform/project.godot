@@ -25,6 +25,7 @@ playerInventory="*res://gamefiles/scripts/autoload/playerInventory.gd"
 enums="*res://gamefiles/scripts/autoload/enums.gd"
 global_variables="*res://gamefiles/scripts/autoload/global_variables.gd"
 playerData="*res://gamefiles/scripts/autoload/playerData.gd"
+utilities="*res://gamefiles/scripts/autoload/utilities.gd"
 
 [input]
 

@@ -34,4 +34,6 @@ __meta__ = {
 scale = Vector2( 50, 1 )
 shape = SubResource( 1 )
 script = ExtResource( 4 )
+
+[node name="Materials" type="Node2D" parent="."]
 [connection signal="body_entered" from="Killzone_ground" to="Killzone_ground/CollisionShape2D" method="_on_Killzone_ground_body_entered"]

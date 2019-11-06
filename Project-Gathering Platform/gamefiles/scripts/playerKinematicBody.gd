@@ -10,7 +10,8 @@ var motion = Vector2()
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	get_node("Sprite").texture = playerData.texture
-	
+	if get_parent().name == "Level":
+		.get_node("Camera2D").set_offset(Vector2(0, 350))
 	pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

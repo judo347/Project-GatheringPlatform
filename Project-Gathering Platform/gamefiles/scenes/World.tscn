@@ -52,7 +52,6 @@ shape = SubResource( 1 )
 [node name="Player" parent="." instance=ExtResource( 4 )]
 
 [node name="OutOfBounds" type="Node2D" parent="."]
-editor/display_folded = true
 
 [node name="StaticBody2D" type="StaticBody2D" parent="OutOfBounds"]
 
@@ -73,7 +72,6 @@ position = Vector2( 0, -480 )
 shape = SubResource( 2 )
 
 [node name="CharacterSelection" type="Node2D" parent="."]
-editor/display_folded = true
 script = ExtResource( 5 )
 
 [node name="Slot1" type="Area2D" parent="CharacterSelection"]

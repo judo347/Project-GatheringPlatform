@@ -1,26 +1,18 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://gamefiles/tilesets/tileset02.tres" type="TileSet" id=1]
 [ext_resource path="res://gamefiles/scenes/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://gamefiles/scripts/Killzone.gd" type="Script" id=3]
-[ext_resource path="res://gamefiles/scripts/Material.gd" type="Script" id=4]
-[ext_resource path="res://resources/01/Material001.png" type="Texture" id=5]
-[ext_resource path="res://resources/01/Material002.png" type="Texture" id=6]
 
 [sub_resource type="LineShape2D" id=1]
-
-[sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 32, 32 )
 
 [node name="Level" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource( 1 )
 format = 1
-tile_data = PoolIntArray( 131081, 0, 0, 131082, 0, 0, 131083, 0, 0, 196624, 0, 0, 196631, 0, 0, 196632, 0, 0, 196633, 0, 0, 196634, 0, 0, 196635, 0, 0, 196636, 0, 0, 196637, 0, 0, 196638, 0, 0, 196639, 0, 0, 262144, 0, 0, 262145, 0, 0, 262146, 0, 0, 262147, 0, 0, 262148, 0, 0, 262165, 0, 0, 327688, 0, 0, 327689, 0, 0, 327690, 0, 0, 327693, 0, 0, 327694, 0, 0, 458757, 0, 0, 458758, 0, 0, 458759, 0, 0, 458770, 0, 0, 458785, 0, 0, 458789, 0, 0, 458793, 0, 0, 458797, 0, 0 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
-editor/display_folded = true
 position = Vector2( 64, 128 )
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
@@ -41,29 +33,5 @@ scale = Vector2( 50, 1 )
 shape = SubResource( 1 )
 script = ExtResource( 3 )
 
-[node name="Material" type="Area2D" parent="."]
-position = Vector2( 704, 96 )
-script = ExtResource( 4 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Sprite" type="Sprite" parent="Material"]
-texture = ExtResource( 5 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Material"]
-shape = SubResource( 2 )
-
-[node name="Material2" type="Area2D" parent="."]
-position = Vector2( 576, 288 )
-script = ExtResource( 4 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Sprite" type="Sprite" parent="Material2"]
-texture = ExtResource( 6 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Material2"]
-shape = SubResource( 2 )
+[node name="Materials" type="Node2D" parent="."]
 [connection signal="body_entered" from="Killzone_ground" to="Killzone_ground/CollisionShape2D" method="_on_Killzone_ground_body_entered"]
