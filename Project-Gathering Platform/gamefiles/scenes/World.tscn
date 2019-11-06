@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://gamefiles/scripts/Benches.gd" type="Script" id=1]
 [ext_resource path="res://gamefiles/scripts/bench_converter.gd" type="Script" id=2]
@@ -12,10 +12,13 @@
 [ext_resource path="res://resources/01/Portal001.png" type="Texture" id=10]
 [ext_resource path="res://gamefiles/tilesets/tileset02.tres" type="TileSet" id=11]
 [ext_resource path="res://gamefiles/scripts/UIManager.gd" type="Script" id=12]
-[ext_resource path="res://gamefiles/scripts/PermanentUIManager.gd" type="Script" id=13]
+[ext_resource path="res://gamefiles/scripts/MaterialConverter.gd" type="Script" id=13]
 [ext_resource path="res://resources/01/Material002.png" type="Texture" id=14]
-[ext_resource path="res://resources/01/Material003.png" type="Texture" id=15]
-[ext_resource path="res://resources/01/Material001.png" type="Texture" id=16]
+[ext_resource path="res://resources/01/Arrow001.png" type="Texture" id=15]
+[ext_resource path="res://resources/01/Skillpoint001.png" type="Texture" id=16]
+[ext_resource path="res://resources/01/Material003.png" type="Texture" id=17]
+[ext_resource path="res://resources/01/Material001.png" type="Texture" id=18]
+[ext_resource path="res://gamefiles/scripts/PermanentUIManager.gd" type="Script" id=19]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 64, 32 )
@@ -139,16 +142,127 @@ tile_data = PoolIntArray( 131079, 0, 0, 131080, 0, 0, 131081, 0, 0, 131082, 0, 0
 script = ExtResource( 12 )
 
 [node name="MaterialConverter" type="Panel" parent="UImaster"]
-visible = false
+editor/display_folded = true
 margin_right = 240.0
 margin_bottom = 240.0
 grow_horizontal = 2
 size_flags_horizontal = 0
+script = ExtResource( 13 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UImaster/MaterialConverter"]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UImaster/MaterialConverter/VBoxContainer"]
+margin_right = 224.0
+margin_bottom = 64.0
+
+[node name="Resource" type="TextureRect" parent="UImaster/MaterialConverter/VBoxContainer/HBoxContainer"]
+margin_right = 64.0
+margin_bottom = 64.0
+texture = ExtResource( 14 )
+
+[node name="Resource_count" type="Label" parent="UImaster/MaterialConverter/VBoxContainer/HBoxContainer"]
+margin_left = 68.0
+margin_top = 25.0
+margin_right = 76.0
+margin_bottom = 39.0
+text = "3"
+
+[node name="Arrow" type="TextureRect" parent="UImaster/MaterialConverter/VBoxContainer/HBoxContainer"]
+margin_left = 80.0
+margin_right = 144.0
+margin_bottom = 64.0
+texture = ExtResource( 15 )
+
+[node name="Skillpoint_count" type="Label" parent="UImaster/MaterialConverter/VBoxContainer/HBoxContainer"]
+margin_left = 148.0
+margin_top = 25.0
+margin_right = 156.0
+margin_bottom = 39.0
+text = "1"
+
+[node name="Skillpoint" type="TextureRect" parent="UImaster/MaterialConverter/VBoxContainer/HBoxContainer"]
+margin_left = 160.0
+margin_right = 224.0
+margin_bottom = 64.0
+texture = ExtResource( 16 )
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="UImaster/MaterialConverter/VBoxContainer"]
+margin_top = 68.0
+margin_right = 224.0
+margin_bottom = 132.0
+
+[node name="Resource" type="TextureRect" parent="UImaster/MaterialConverter/VBoxContainer/HBoxContainer2"]
+margin_right = 64.0
+margin_bottom = 64.0
+texture = ExtResource( 17 )
+
+[node name="Resource_count" type="Label" parent="UImaster/MaterialConverter/VBoxContainer/HBoxContainer2"]
+margin_left = 68.0
+margin_top = 25.0
+margin_right = 76.0
+margin_bottom = 39.0
+text = "3"
+
+[node name="Arrow" type="TextureRect" parent="UImaster/MaterialConverter/VBoxContainer/HBoxContainer2"]
+margin_left = 80.0
+margin_right = 144.0
+margin_bottom = 64.0
+texture = ExtResource( 15 )
+
+[node name="Skillpoint_count" type="Label" parent="UImaster/MaterialConverter/VBoxContainer/HBoxContainer2"]
+margin_left = 148.0
+margin_top = 25.0
+margin_right = 156.0
+margin_bottom = 39.0
+text = "1"
+
+[node name="Skillpoint" type="TextureRect" parent="UImaster/MaterialConverter/VBoxContainer/HBoxContainer2"]
+margin_left = 160.0
+margin_right = 224.0
+margin_bottom = 64.0
+texture = ExtResource( 16 )
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="UImaster/MaterialConverter/VBoxContainer"]
+margin_top = 136.0
+margin_right = 224.0
+margin_bottom = 200.0
+
+[node name="Resource" type="TextureRect" parent="UImaster/MaterialConverter/VBoxContainer/HBoxContainer3"]
+margin_right = 64.0
+margin_bottom = 64.0
+texture = ExtResource( 18 )
+
+[node name="Resource_count" type="Label" parent="UImaster/MaterialConverter/VBoxContainer/HBoxContainer3"]
+margin_left = 68.0
+margin_top = 25.0
+margin_right = 76.0
+margin_bottom = 39.0
+text = "3"
+
+[node name="Arrow" type="TextureRect" parent="UImaster/MaterialConverter/VBoxContainer/HBoxContainer3"]
+margin_left = 80.0
+margin_right = 144.0
+margin_bottom = 64.0
+texture = ExtResource( 15 )
+
+[node name="Skillpoint_count" type="Label" parent="UImaster/MaterialConverter/VBoxContainer/HBoxContainer3"]
+margin_left = 148.0
+margin_top = 25.0
+margin_right = 156.0
+margin_bottom = 39.0
+text = "1"
+
+[node name="Skillpoint" type="TextureRect" parent="UImaster/MaterialConverter/VBoxContainer/HBoxContainer3"]
+margin_left = 160.0
+margin_right = 224.0
+margin_bottom = 64.0
+texture = ExtResource( 16 )
 
 [node name="PermanentUI" type="Node2D" parent="UImaster"]
-editor/display_folded = true
 position = Vector2( -768, -448 )
-script = ExtResource( 13 )
+script = ExtResource( 19 )
 
 [node name="MarginContainer" type="MarginContainer" parent="UImaster/PermanentUI"]
 margin_left = 10.0
@@ -194,7 +308,7 @@ margin_bottom = 132.0
 [node name="TextureRect" type="TextureRect" parent="UImaster/PermanentUI/MarginContainer/HBoxContainer/InfoBars/BarWood"]
 margin_right = 64.0
 margin_bottom = 64.0
-texture = ExtResource( 15 )
+texture = ExtResource( 17 )
 
 [node name="Label" type="Label" parent="UImaster/PermanentUI/MarginContainer/HBoxContainer/InfoBars/BarWood"]
 margin_left = 68.0
@@ -217,7 +331,7 @@ margin_bottom = 200.0
 [node name="TextureRect" type="TextureRect" parent="UImaster/PermanentUI/MarginContainer/HBoxContainer/InfoBars/BarGrass"]
 margin_right = 64.0
 margin_bottom = 64.0
-texture = ExtResource( 16 )
+texture = ExtResource( 18 )
 
 [node name="Label" type="Label" parent="UImaster/PermanentUI/MarginContainer/HBoxContainer/InfoBars/BarGrass"]
 margin_left = 68.0
@@ -237,3 +351,9 @@ margin_bottom = 39.0
 [connection signal="body_exited" from="CharacterSelection/Slot2" to="CharacterSelection" method="_on_Area2D_body_exited" binds= [ 2 ]]
 [connection signal="body_entered" from="CharacterSelection/Slot3" to="CharacterSelection" method="_on_Area2D_body_entered" binds= [ 3 ]]
 [connection signal="body_exited" from="CharacterSelection/Slot3" to="CharacterSelection" method="_on_Area2D_body_exited" binds= [ 3 ]]
+[connection signal="mouse_entered" from="UImaster/MaterialConverter/VBoxContainer/HBoxContainer/Arrow" to="UImaster/MaterialConverter" method="mouse_entered_material_arrow" binds= [ 0 ]]
+[connection signal="mouse_exited" from="UImaster/MaterialConverter/VBoxContainer/HBoxContainer/Arrow" to="UImaster/MaterialConverter" method="mouse_exit_material_arrow" binds= [ 0 ]]
+[connection signal="mouse_entered" from="UImaster/MaterialConverter/VBoxContainer/HBoxContainer2/Arrow" to="UImaster/MaterialConverter" method="mouse_entered_material_arrow" binds= [ 1 ]]
+[connection signal="mouse_exited" from="UImaster/MaterialConverter/VBoxContainer/HBoxContainer2/Arrow" to="UImaster/MaterialConverter" method="mouse_exit_material_arrow" binds= [ 1 ]]
+[connection signal="mouse_entered" from="UImaster/MaterialConverter/VBoxContainer/HBoxContainer3/Arrow" to="UImaster/MaterialConverter" method="mouse_entered_material_arrow" binds= [ 2 ]]
+[connection signal="mouse_exited" from="UImaster/MaterialConverter/VBoxContainer/HBoxContainer3/Arrow" to="UImaster/MaterialConverter" method="mouse_exit_material_arrow" binds= [ 2 ]]

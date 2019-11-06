@@ -11,6 +11,7 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	
+	get_node("MaterialConverter").material_converter_tick()
 	close_ui_key_checker()
 
 func close_ui_key_checker():

@@ -10,6 +10,9 @@ func _ready():
 	label_stone_value = get_node("MarginContainer/HBoxContainer/InfoBars/BarStone/Value")
 	label_wood_value = get_node("MarginContainer/HBoxContainer/InfoBars/BarWood/Value")
 	
+	update_material_labels()
+
+func update_material_labels():
 	set_material_label_values(playerInventory.material_wood_count, 
 								playerInventory.material_grass_count, 
 								playerInventory.material_stone_count)

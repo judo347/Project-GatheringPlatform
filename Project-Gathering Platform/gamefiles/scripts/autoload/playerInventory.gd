@@ -4,6 +4,11 @@ var material_grass_count = 0
 var material_wood_count = 0
 var material_stone_count = 0
 
+var skillpoints = 0
+
+func add_skillpoint():
+	skillpoints =+ 1
+
 # params: enums.Material, the amount to add
 func add_material(type, amount):
 	match type:
