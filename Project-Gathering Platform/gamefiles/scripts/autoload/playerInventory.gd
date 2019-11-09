@@ -9,6 +9,15 @@ var skillpoints = 0
 func add_skillpoint():
 	skillpoints =+ 1
 
+func add_skillpoints(amount):
+	skillpoints = skillpoints + amount
+	
+func remove_skillpoint():
+	skillpoints =- 1
+
+func remove_skillpoints(amount):
+	skillpoints = skillpoints - amount
+
 # params: enums.Material, the amount to add
 func add_material(type, amount):
 	match type:

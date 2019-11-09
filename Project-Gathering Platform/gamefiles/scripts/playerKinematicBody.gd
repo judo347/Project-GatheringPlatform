@@ -21,6 +21,9 @@ func _physics_process(delta):
 		_select_character()
 		interactable_object()
 	
+	if Input.is_action_just_pressed("ui_achievement"):
+		get_parent().get_node("UImaster").show_AchievementMenu()
+	
 	motion.y += GRAVITY_ACC
 	
 	if Input.is_action_pressed("ui_right"):
@@ -41,9 +44,7 @@ func _physics_process(delta):
 	pass
 	
 func interactable_object():
-	
-	if get_parent().get_node("Benches").is_player_touching_converter:
-		get_parent().get_node("UImaster").show_MaterialConverter()
+	get_parent().get_node("Benches").show_ui_player_is_touching()
 
 func _select_character():
 	

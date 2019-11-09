@@ -20,7 +20,7 @@ func material_converter_tick():
 				playerInventory.skillpoints += 1
 		
 		# Update UI
-		get_parent().get_node("PermanentUI").update_material_labels()
+		get_parent().get_node("PermanentUI").update_labels()
 
 func mouse_entered_material_arrow(arrow_number):
 	print("Triigered: ", arrow_number)
@@ -37,10 +37,6 @@ func mouse_exit_material_arrow(arrow_number):
 		0: mouseIsOver_stone = false
 		1: mouseIsOver_wood = false
 		2: mouseIsOver_grass = false
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
 
 func convert_material_to_skillpoint(type):
 	pass

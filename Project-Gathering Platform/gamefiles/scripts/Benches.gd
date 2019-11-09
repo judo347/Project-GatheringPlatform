@@ -1,11 +1,10 @@
 extends Node
 
 var is_player_touching_converter = false
+var is_player_touching_charModder = false
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+func show_ui_player_is_touching():
+	if is_player_touching_charModder:
+		get_parent().get_node("UImaster").show_CharModder()
+	elif is_player_touching_converter:
+		get_parent().get_node("UImaster").show_MaterialConverter()

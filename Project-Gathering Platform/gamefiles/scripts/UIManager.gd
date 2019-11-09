@@ -12,12 +12,16 @@ func _ready():
 func _process(delta):
 	
 	get_node("MaterialConverter").material_converter_tick()
+	get_node("CharModder").charModder_converter_tick()
 	close_ui_key_checker()
 
 func close_ui_key_checker():
+	
 	if Input.is_action_just_pressed("ui_cancel"):
 		close_all_window_ui()
 	elif Input.is_action_just_pressed("ui_left"):
+		close_all_window_ui()
+	elif Input.is_action_just_pressed("ui_right"):
 		close_all_window_ui()
 	elif Input.is_action_just_pressed("ui_up"):
 		close_all_window_ui()
@@ -26,9 +30,23 @@ func close_ui_key_checker():
 
 func close_all_window_ui():
 	hide_MaterialConverter()
+	hide_CharModder()
+	hide_AchievementMenu()
 
 func show_MaterialConverter():
 	get_node("MaterialConverter").show()
 	
 func hide_MaterialConverter():
 	get_node("MaterialConverter").hide()
+
+func show_CharModder():
+	get_node("CharModder").show()
+	
+func hide_CharModder():
+	get_node("CharModder").hide()
+	
+func show_AchievementMenu():
+	get_node("UIFullscreens/AchievementMenu").show()
+	
+func hide_AchievementMenu():
+	get_node("UIFullscreens/AchievementMenu").hide()
