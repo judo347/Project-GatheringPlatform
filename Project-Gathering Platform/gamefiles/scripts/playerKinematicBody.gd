@@ -4,8 +4,13 @@ const UP = Vector2(0, -1)
 const GRAVITY_ACC = 20
 const MOVEMENTSPEED = 400
 const JUMP_HEIGHT = -800
+const SLIDE_FORCE = 500
+const SLIDE_SPEED = 400
 
 var jumps_used = 0
+
+var slide_destination = 0
+var is_sliding = false
 
 var motion = Vector2()
 
@@ -46,10 +51,39 @@ func _physics_process(delta):
 		if Input.is_action_just_pressed("ui_up"):
 				jump()
 	
+	slide(delta)
+	
 	motion = move_and_slide(motion, UP)
 	
 	pass
+
+func slide(delta):
+	if playerData.hasSlide:
+		if is_on_floor():
+			if Input.is_action_just_pressed("ui_down"):
+				# TODO slide direction
+				#motion.x = SLIDE_FORCE
+				slide_destination = SLIDE_FORCE + get_global_position().x
+				is_sliding = true
+				print("Slide activated")
 	
+	var current_position = get_global_position()
+	
+	if !is_sliding:
+		return
+	
+	var newX = 0
+	
+	if abs(current_position.x - slide_destination) < 0.002:
+		is_sliding = false
+		return
+	elif current_position.x < slide_destination:
+		newX = current_position.x + SLIDE_SPEED*delta
+	elif current_position.x > slide_destination:
+		newX = current_position.x - SLIDE_SPEED*delta
+		
+	set_global_position(Vector2(newX, current_position.y))
+
 func interactable_object():
 	get_parent().get_node("Benches").show_ui_player_is_touching()
 
