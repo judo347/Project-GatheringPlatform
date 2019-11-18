@@ -12,7 +12,8 @@ func _ready():
 func _process(delta):
 	
 	get_node("MaterialConverter").material_converter_tick()
-	get_node("CharModder").charModder_converter_tick()
+	get_node("CharModder").charModder_converter_tick() #TODO rename method (-converter)
+	get_node("UniqueAbilities").uniqueAbilities_tick()
 	close_ui_key_checker()
 
 func close_ui_key_checker():
@@ -32,6 +33,7 @@ func close_all_window_ui():
 	hide_MaterialConverter()
 	hide_CharModder()
 	hide_AchievementMenu()
+	hide_UniqueAbilities()
 
 func show_MaterialConverter():
 	get_node("MaterialConverter").show()
@@ -44,6 +46,12 @@ func show_CharModder():
 	
 func hide_CharModder():
 	get_node("CharModder").hide()
+	
+func show_UniqueAbilities():
+	get_node("UniqueAbilities").show()
+	
+func hide_UniqueAbilities():
+	get_node("UniqueAbilities").hide()
 	
 func show_AchievementMenu():
 	get_node("UIFullscreens/AchievementMenu").show()

@@ -14,3 +14,6 @@ var bench_charModder_background_selected = load("res://resources/01/CharMod_Sele
 var bench_charModder_background_deselected = load("res://resources/01/CharMod_Deselected001.png")
 
 var achievement_gameobject = load("res://gamefiles/scenes/game_objects/Achievement.tscn")
+
+# The % of materials lost on death in a level
+var death_penalty_percent = 80
