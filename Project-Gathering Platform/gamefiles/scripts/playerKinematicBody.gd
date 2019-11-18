@@ -7,6 +7,8 @@ const JUMP_HEIGHT = -800
 const SLIDE_FORCE = 500
 const SLIDE_SPEED = 400
 
+var is_facing_right = true
+
 var jumps_used = 0
 
 var slide_destination = 0
@@ -35,8 +37,10 @@ func _physics_process(delta):
 	
 	if Input.is_action_pressed("ui_right"):
 		motion.x = MOVEMENTSPEED
+		is_facing_right = true
 	elif Input.is_action_pressed("ui_left"):
 		motion.x = -MOVEMENTSPEED
+		is_facing_right = false
 	else:
 		motion.x = 0
 		
@@ -61,9 +65,12 @@ func slide(delta):
 	if playerData.hasSlide:
 		if is_on_floor():
 			if Input.is_action_just_pressed("ui_down"):
-				# TODO slide direction
-				#motion.x = SLIDE_FORCE
-				slide_destination = SLIDE_FORCE + get_global_position().x
+				# Slide direction
+				if is_facing_right:
+					slide_destination = get_global_position().x + SLIDE_FORCE
+				else:
+					slide_destination = get_global_position().x - SLIDE_FORCE
+				
 				is_sliding = true
 				print("Slide activated")
 	
@@ -74,7 +81,7 @@ func slide(delta):
 	
 	var newX = 0
 	
-	if abs(current_position.x - slide_destination) < 0.002:
+	if abs(current_position.x - slide_destination) < 0.2:
 		is_sliding = false
 		return
 	elif current_position.x < slide_destination:
