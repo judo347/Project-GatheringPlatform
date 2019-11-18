@@ -5,6 +5,8 @@ const GRAVITY_ACC = 20
 const MOVEMENTSPEED = 400
 const JUMP_HEIGHT = -800
 
+var jumps_used = 0
+
 var motion = Vector2()
 
 # Called when the node enters the scene tree for the first time.
@@ -33,11 +35,16 @@ func _physics_process(delta):
 	else:
 		motion.x = 0
 		
-		
+	if Input.is_action_just_pressed("ui_up"):
+		if playerData.hasDoubleJump && jumps_used < 2:
+			jump()
+	
 	if is_on_floor():
+		jumps_used = 0
+		
 		# print("On floor.")
 		if Input.is_action_just_pressed("ui_up"):
-				motion.y = JUMP_HEIGHT
+				jump()
 	
 	motion = move_and_slide(motion, UP)
 	
@@ -95,3 +102,7 @@ func change_character(type):
 
 func _kill_player():
 	queue_free()
+
+func jump():
+	motion.y = JUMP_HEIGHT
+	jumps_used = jumps_used + 1

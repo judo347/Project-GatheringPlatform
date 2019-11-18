@@ -165,7 +165,6 @@ tile_data = PoolIntArray( 131079, 0, 0, 131080, 0, 0, 131081, 0, 0, 131082, 0, 0
 script = ExtResource( 14 )
 
 [node name="MaterialConverter" type="Panel" parent="UImaster"]
-editor/display_folded = true
 visible = false
 margin_right = 240.0
 margin_bottom = 240.0
@@ -174,6 +173,7 @@ size_flags_horizontal = 0
 script = ExtResource( 15 )
 
 [node name="VBoxContainer" type="VBoxContainer" parent="UImaster/MaterialConverter"]
+editor/display_folded = true
 margin_right = 40.0
 margin_bottom = 40.0
 
