@@ -19,7 +19,8 @@ func _physics_process(delta):
 	for body in bodies:
 		if body.name == "Player":
 			# Player is touching material
-			playerInventory.add_material(material_type, material_amount)
+			playerInventory.add_collected_material(material_type, material_amount)
+			get_parent().get_parent().get_node("Player/Camera2D/PermanentUI").update_labels()
 			print("Added material to player inventory") # TODO replace with functionality
 			queue_free()
 	

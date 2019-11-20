@@ -117,14 +117,22 @@ func _select_character():
 
 func change_character(type):
 	
+	var charPathFind_int_to = utilities.character_enum_to_int(playerData.currentCharacter)
+	var chatPathFind_int_from = utilities.character_enum_to_int(type)
+	
 	# Place the de-seleted char back into its slot
-	match playerData.currentCharacter:
-		enums.CharacterEnum.ONE:
-			get_parent().get_node("CharacterSelection/Slot1/Sprite").show()
-		enums.CharacterEnum.TWO:
-			get_parent().get_node("CharacterSelection/Slot2/Sprite").show()
-		enums.CharacterEnum.THREE:
-			get_parent().get_node("CharacterSelection/Slot3/Sprite").show()
+	get_parent().get_node("CharPathFinding").move_char(chatPathFind_int_from, charPathFind_int_to)
+	
+#	match playerData.currentCharacter: #TODO remove, not nessesary
+#		enums.CharacterEnum.ONE:
+#			#get_parent().get_node("CharacterSelection/Slot1/Sprite").show()
+#			get_parent().get_node("CharPathFinding").move_char(chatPathFind_int_from, charPathFind_int_to)
+#		enums.CharacterEnum.TWO:
+#			get_parent().get_node("CharacterSelection/Slot2/Sprite").show()
+#			get_parent().get_node("CharPathFinding").move_char(chatPathFind_int_from, charPathFind_int_to)
+#		enums.CharacterEnum.THREE:
+#			get_parent().get_node("CharacterSelection/Slot3/Sprite").show()
+#			get_parent().get_node("CharPathFinding").move_char(chatPathFind_int_from, charPathFind_int_to)
 	
 	# Change to the new character
 	match type:

@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=2]
+[gd_scene load_steps=45 format=2]
 
 [ext_resource path="res://gamefiles/scripts/Benches.gd" type="Script" id=1]
 [ext_resource path="res://gamefiles/scripts/bench_converter.gd" type="Script" id=2]
@@ -31,6 +31,7 @@
 [ext_resource path="res://resources/01/UniqueAbilities_worldFlip001.png" type="Texture" id=29]
 [ext_resource path="res://gamefiles/scripts/PermanentUIManager.gd" type="Script" id=30]
 [ext_resource path="res://gamefiles/scripts/AchievementManager.gd" type="Script" id=31]
+[ext_resource path="res://gamefiles/scripts/CharPathFinding.gd" type="Script" id=32]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 64, 32 )
@@ -38,20 +39,45 @@ extents = Vector2( 64, 32 )
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 64, 64 )
 
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 64, 64 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 832, 32 )
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 32, 448 )
+
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 32, 32 )
+
 [sub_resource type="RectangleShape2D" id=7]
 extents = Vector2( 64, 64 )
 
-[sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 832, 32 )
+[sub_resource type="Curve2D" id=8]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, -672, 64, 0, 0, 0, 0, -576, 64, -28.1294, 35.1618, 28.1294, -35.1618, -544, -128, 0, 0, 0, 0, -448, -192, 0, 0, 0, 0, -320, -192, 0, 0, 0, 0, -192, -192, -42.1942, 0, 42.1942, 0, -96, -256, 0, 0, 0, 0, 64, -256, 0, 0, 0, 0, 192, -256 )
+}
 
-[sub_resource type="RectangleShape2D" id=4]
-extents = Vector2( 32, 448 )
+[sub_resource type="Curve2D" id=9]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 192, -256, 0, 0, 0, 0, 64, -256, 62.5773, 1.36038, -62.5773, -1.36038, 0, -320, 0, 0, 0, 0, -192, -192, 0, 0, 0, 0, -448, -192, 68.0188, -12.2434, -68.0188, 12.2434, -512, -256, 0, 0, 0, 0, -576, 64, 0, 0, 0, 0, -672, 64 )
+}
 
-[sub_resource type="RectangleShape2D" id=5]
-extents = Vector2( 32, 32 )
+[sub_resource type="Curve2D" id=10]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, -672, 64, 0, 0, 0, 0, -576, 64, -34.0094, 40.8113, 34.0094, -40.8113, -544, -128, 0, 0, 0, 0, -448, -192, 0, 0, 0, 0, -320, -192 )
+}
 
-[sub_resource type="RectangleShape2D" id=6]
-extents = Vector2( 64, 64 )
+[sub_resource type="Curve2D" id=11]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 192, -256, 0, 0, 0, 0, 64, -256, 74.8207, -25.8471, -74.8207, 25.8471, -64, -320, 0, 0, 0, 0, -192, -192, 0, 0, 0, 0, -320, -192 )
+}
+
+[sub_resource type="Curve2D" id=12]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, -320, -192, 0, 0, 0, 0, -448, -192, 43.7129, -58.7863, -43.7129, 58.7863, -544, -256, 0, 0, 0, 0, -576, 64, 0, 0, 0, 0, -672, 64 )
+}
 
 [node name="World" type="Node"]
 
@@ -60,6 +86,7 @@ current = true
 zoom = Vector2( 1.5, 1.5 )
 
 [node name="Benches" type="Node" parent="."]
+editor/display_folded = true
 script = ExtResource( 1 )
 
 [node name="Converter" type="Area2D" parent="Benches"]
@@ -98,7 +125,7 @@ scale = Vector2( 2, 2 )
 texture = ExtResource( 7 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Benches/UniqueAbilities"]
-shape = SubResource( 7 )
+shape = SubResource( 3 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -112,65 +139,66 @@ editor/display_folded = true
 
 [node name="Bottom" type="CollisionShape2D" parent="OutOfBounds/StaticBody2D"]
 position = Vector2( 0, 480 )
-shape = SubResource( 3 )
+shape = SubResource( 4 )
 
 [node name="Left" type="CollisionShape2D" parent="OutOfBounds/StaticBody2D"]
 position = Vector2( -800, 0 )
-shape = SubResource( 4 )
+shape = SubResource( 5 )
 
 [node name="Right" type="CollisionShape2D" parent="OutOfBounds/StaticBody2D"]
 position = Vector2( 800, 0 )
-shape = SubResource( 4 )
+shape = SubResource( 5 )
 
 [node name="Top" type="CollisionShape2D" parent="OutOfBounds/StaticBody2D"]
 position = Vector2( 0, -480 )
-shape = SubResource( 3 )
+shape = SubResource( 4 )
 
 [node name="CharacterSelection" type="Node2D" parent="."]
 editor/display_folded = true
 script = ExtResource( 9 )
 
 [node name="Slot1" type="Area2D" parent="CharacterSelection"]
-position = Vector2( -672, 320 )
+editor/display_folded = true
+position = Vector2( -672, 64 )
 __meta__ = {
 "_edit_group_": true
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterSelection/Slot1"]
 scale = Vector2( 2, 2 )
-shape = SubResource( 5 )
+shape = SubResource( 6 )
 
 [node name="Sprite" type="Sprite" parent="CharacterSelection/Slot1"]
 texture = ExtResource( 10 )
 
 [node name="Slot2" type="Area2D" parent="CharacterSelection"]
-position = Vector2( -512, 320 )
+editor/display_folded = true
+position = Vector2( -320, -192 )
 __meta__ = {
 "_edit_group_": true
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterSelection/Slot2"]
 scale = Vector2( 2, 2 )
-shape = SubResource( 5 )
+shape = SubResource( 6 )
 
 [node name="Sprite" type="Sprite" parent="CharacterSelection/Slot2"]
 texture = ExtResource( 11 )
 
 [node name="Slot3" type="Area2D" parent="CharacterSelection"]
-position = Vector2( -352, 320 )
+position = Vector2( 192, -256 )
 __meta__ = {
 "_edit_group_": true
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterSelection/Slot3"]
 scale = Vector2( 2, 2 )
-shape = SubResource( 5 )
+shape = SubResource( 6 )
 
 [node name="Sprite" type="Sprite" parent="CharacterSelection/Slot3"]
 texture = ExtResource( 12 )
 
 [node name="Portal" type="Area2D" parent="."]
-editor/display_folded = true
 position = Vector2( 672, 64 )
 script = ExtResource( 13 )
 __meta__ = {
@@ -181,14 +209,15 @@ __meta__ = {
 texture = ExtResource( 14 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Portal"]
-shape = SubResource( 6 )
+shape = SubResource( 7 )
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource( 15 )
 format = 1
-tile_data = PoolIntArray( 131079, 0, 0, 131080, 0, 0, 131081, 0, 0, 131082, 0, 0, 131083, 0, 0, 458740, 0, 0, 458741, 0, 0, 458742, 0, 0, 458743, 0, 0, 458744, 0, 0, 458745, 0, 0, 458746, 0, 0, 458747, 0, 0, 458748, 0, 0, 458749, 0, 0, 458750, 0, 0, 458751, 0, 0, 393216, 0, 0, 393217, 0, 0, 393218, 0, 0, 393219, 0, 0, 393220, 0, 0, 393221, 0, 0, 393222, 0, 0, 393223, 0, 0, 393224, 0, 0, 393225, 0, 0, 393226, 0, 0, 393227, 0, 0 )
+tile_data = PoolIntArray( -196607, 0, 0, -196606, 0, 0, -196605, 0, 0, -196604, 0, 0, -65543, 0, 0, -65542, 0, 0, -65541, 0, 0, -65540, 0, 0, 196596, 0, 0, 196597, 0, 0, 196598, 0, 0, 131079, 0, 0, 131080, 0, 0, 131081, 0, 0, 131082, 0, 0, 131083, 0, 0, 458740, 0, 0, 458741, 0, 0, 458742, 0, 0, 458743, 0, 0, 458744, 0, 0, 458745, 0, 0, 458746, 0, 0, 458747, 0, 0, 458748, 0, 0, 458749, 0, 0, 458750, 0, 0, 458751, 0, 0, 393216, 0, 0, 393217, 0, 0, 393218, 0, 0, 393219, 0, 0, 393220, 0, 0, 393221, 0, 0, 393222, 0, 0, 393223, 0, 0, 393224, 0, 0, 393225, 0, 0, 393226, 0, 0, 393227, 0, 0 )
 
 [node name="UImaster" type="Node" parent="."]
+editor/display_folded = true
 script = ExtResource( 16 )
 
 [node name="MaterialConverter" type="Panel" parent="UImaster"]
@@ -313,6 +342,8 @@ margin_bottom = 64.0
 texture = ExtResource( 20 )
 
 [node name="CharModder" type="Panel" parent="UImaster"]
+editor/display_folded = true
+visible = false
 margin_right = 240.0
 margin_bottom = 240.0
 script = ExtResource( 23 )
@@ -375,6 +406,8 @@ margin_bottom = 82.0
 text = "Cost: x"
 
 [node name="UniqueAbilities" type="Panel" parent="UImaster"]
+editor/display_folded = true
+visible = false
 margin_right = 240.0
 margin_bottom = 240.0
 script = ExtResource( 27 )
@@ -437,12 +470,10 @@ margin_bottom = 82.0
 text = "Cost: x"
 
 [node name="PermanentUI" type="Node2D" parent="UImaster"]
-editor/display_folded = true
 position = Vector2( -768, -448 )
 script = ExtResource( 30 )
 
 [node name="MarginContainer" type="MarginContainer" parent="UImaster/PermanentUI"]
-editor/display_folded = true
 margin_left = 10.0
 margin_top = 10.0
 margin_right = 10.0
@@ -563,6 +594,80 @@ margin_right = 1536.0
 margin_bottom = 896.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="UImaster/UIFullscreens/AchievementMenu/ScrollContainer"]
+
+[node name="CharPathFinding" type="Node" parent="."]
+script = ExtResource( 32 )
+
+[node name="Slot1To3" type="Path2D" parent="CharPathFinding"]
+curve = SubResource( 8 )
+
+[node name="PathFollow2D" type="PathFollow2D" parent="CharPathFinding/Slot1To3"]
+position = Vector2( -672, 64 )
+rotate = false
+loop = false
+
+[node name="Sprite" type="Sprite" parent="CharPathFinding/Slot1To3/PathFollow2D"]
+visible = false
+texture = ExtResource( 12 )
+
+[node name="Slot3To1" type="Path2D" parent="CharPathFinding"]
+curve = SubResource( 9 )
+
+[node name="PathFollow2D" type="PathFollow2D" parent="CharPathFinding/Slot3To1"]
+position = Vector2( 192, -256 )
+rotation = 3.14159
+rotate = false
+loop = false
+
+[node name="Sprite" type="Sprite" parent="CharPathFinding/Slot3To1/PathFollow2D"]
+visible = false
+texture = ExtResource( 10 )
+
+[node name="Slot1To2" type="Path2D" parent="CharPathFinding"]
+curve = SubResource( 10 )
+
+[node name="PathFollow2D" type="PathFollow2D" parent="CharPathFinding/Slot1To2"]
+position = Vector2( -672, 64 )
+rotate = false
+loop = false
+
+[node name="Sprite" type="Sprite" parent="CharPathFinding/Slot1To2/PathFollow2D"]
+visible = false
+texture = ExtResource( 11 )
+
+[node name="Slot3To2" type="Path2D" parent="CharPathFinding"]
+curve = SubResource( 11 )
+
+[node name="PathFollow2D" type="PathFollow2D" parent="CharPathFinding/Slot3To2"]
+position = Vector2( 192, -256 )
+rotate = false
+loop = false
+
+[node name="Sprite" type="Sprite" parent="CharPathFinding/Slot3To2/PathFollow2D"]
+visible = false
+texture = ExtResource( 11 )
+
+[node name="Slot2To1" type="Path2D" parent="CharPathFinding"]
+curve = SubResource( 12 )
+
+[node name="PathFollow2D" type="PathFollow2D" parent="CharPathFinding/Slot2To1"]
+position = Vector2( -320, -192 )
+rotate = false
+loop = false
+
+[node name="Sprite" type="Sprite" parent="CharPathFinding/Slot2To1/PathFollow2D"]
+visible = false
+texture = ExtResource( 10 )
+
+[node name="Slot2To3" type="Path2D" parent="CharPathFinding"]
+
+[node name="PathFollow2D" type="PathFollow2D" parent="CharPathFinding/Slot2To3"]
+position = Vector2( -320, -192 )
+rotate = false
+loop = false
+
+[node name="Sprite" type="Sprite" parent="CharPathFinding/Slot2To3/PathFollow2D"]
+visible = false
 [connection signal="body_entered" from="CharacterSelection/Slot1" to="CharacterSelection" method="_on_Area2D_body_entered" binds= [ 1 ]]
 [connection signal="body_exited" from="CharacterSelection/Slot1" to="CharacterSelection" method="_on_Area2D_body_exited" binds= [ 1 ]]
 [connection signal="body_entered" from="CharacterSelection/Slot2" to="CharacterSelection" method="_on_Area2D_body_entered" binds= [ 2 ]]

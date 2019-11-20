@@ -1,9 +1,13 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://gamefiles/scripts/level_generator.gd" type="Script" id=1]
 [ext_resource path="res://gamefiles/tilesets/tileset02.tres" type="TileSet" id=2]
 [ext_resource path="res://gamefiles/scenes/Player.tscn" type="PackedScene" id=3]
-[ext_resource path="res://gamefiles/scripts/Killzone.gd" type="Script" id=4]
+[ext_resource path="res://gamefiles/scripts/PermanentUILevel.gd" type="Script" id=4]
+[ext_resource path="res://resources/01/Material002.png" type="Texture" id=5]
+[ext_resource path="res://resources/01/Material003.png" type="Texture" id=6]
+[ext_resource path="res://resources/01/Material001.png" type="Texture" id=7]
+[ext_resource path="res://gamefiles/scripts/Killzone.gd" type="Script" id=8]
 
 [sub_resource type="LineShape2D" id=1]
 
@@ -15,7 +19,6 @@ tile_set = ExtResource( 2 )
 format = 1
 
 [node name="Player" parent="." instance=ExtResource( 3 )]
-editor/display_folded = true
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2( -64, -128 )
@@ -24,7 +27,106 @@ zoom = Vector2( 2, 2 )
 drag_margin_top = 1.0
 drag_margin_bottom = 1.0
 
+[node name="PermanentUI" type="Node2D" parent="Player/Camera2D"]
+position = Vector2( -1024, -598 )
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="MarginContainer" type="MarginContainer" parent="Player/Camera2D/PermanentUI"]
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 10.0
+margin_bottom = 10.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Player/Camera2D/PermanentUI/MarginContainer"]
+margin_right = 128.0
+margin_bottom = 218.0
+
+[node name="InfoBars" type="VBoxContainer" parent="Player/Camera2D/PermanentUI/MarginContainer/HBoxContainer"]
+margin_right = 128.0
+margin_bottom = 218.0
+
+[node name="Label" type="Label" parent="Player/Camera2D/PermanentUI/MarginContainer/HBoxContainer/InfoBars"]
+margin_right = 128.0
+margin_bottom = 14.0
+text = "Collected materials:"
+
+[node name="BarStone" type="HBoxContainer" parent="Player/Camera2D/PermanentUI/MarginContainer/HBoxContainer/InfoBars"]
+margin_top = 18.0
+margin_right = 128.0
+margin_bottom = 82.0
+
+[node name="TextureRect" type="TextureRect" parent="Player/Camera2D/PermanentUI/MarginContainer/HBoxContainer/InfoBars/BarStone"]
+margin_right = 64.0
+margin_bottom = 64.0
+texture = ExtResource( 5 )
+
+[node name="Label" type="Label" parent="Player/Camera2D/PermanentUI/MarginContainer/HBoxContainer/InfoBars/BarStone"]
+margin_left = 68.0
+margin_top = 25.0
+margin_right = 112.0
+margin_bottom = 39.0
+text = "Stone: "
+
+[node name="Value" type="Label" parent="Player/Camera2D/PermanentUI/MarginContainer/HBoxContainer/InfoBars/BarStone"]
+margin_left = 116.0
+margin_top = 25.0
+margin_right = 123.0
+margin_bottom = 39.0
+text = "x"
+
+[node name="BarWood" type="HBoxContainer" parent="Player/Camera2D/PermanentUI/MarginContainer/HBoxContainer/InfoBars"]
+margin_top = 86.0
+margin_right = 128.0
+margin_bottom = 150.0
+
+[node name="TextureRect" type="TextureRect" parent="Player/Camera2D/PermanentUI/MarginContainer/HBoxContainer/InfoBars/BarWood"]
+margin_right = 64.0
+margin_bottom = 64.0
+texture = ExtResource( 6 )
+
+[node name="Label" type="Label" parent="Player/Camera2D/PermanentUI/MarginContainer/HBoxContainer/InfoBars/BarWood"]
+margin_left = 68.0
+margin_top = 25.0
+margin_right = 113.0
+margin_bottom = 39.0
+text = "Wood: "
+
+[node name="Value" type="Label" parent="Player/Camera2D/PermanentUI/MarginContainer/HBoxContainer/InfoBars/BarWood"]
+margin_left = 117.0
+margin_top = 25.0
+margin_right = 124.0
+margin_bottom = 39.0
+text = "x"
+
+[node name="BarGrass" type="HBoxContainer" parent="Player/Camera2D/PermanentUI/MarginContainer/HBoxContainer/InfoBars"]
+margin_top = 154.0
+margin_right = 128.0
+margin_bottom = 218.0
+
+[node name="TextureRect" type="TextureRect" parent="Player/Camera2D/PermanentUI/MarginContainer/HBoxContainer/InfoBars/BarGrass"]
+margin_right = 64.0
+margin_bottom = 64.0
+texture = ExtResource( 7 )
+
+[node name="Label" type="Label" parent="Player/Camera2D/PermanentUI/MarginContainer/HBoxContainer/InfoBars/BarGrass"]
+margin_left = 68.0
+margin_top = 25.0
+margin_right = 112.0
+margin_bottom = 39.0
+text = "Grass: "
+
+[node name="Value" type="Label" parent="Player/Camera2D/PermanentUI/MarginContainer/HBoxContainer/InfoBars/BarGrass"]
+margin_left = 116.0
+margin_top = 25.0
+margin_right = 123.0
+margin_bottom = 39.0
+text = "x"
+
 [node name="Killzone_ground" type="Area2D" parent="."]
+editor/display_folded = true
 position = Vector2( 4256, 640 )
 __meta__ = {
 "_edit_group_": true
@@ -33,7 +135,7 @@ __meta__ = {
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone_ground"]
 scale = Vector2( 50, 1 )
 shape = SubResource( 1 )
-script = ExtResource( 4 )
+script = ExtResource( 8 )
 
 [node name="Materials" type="Node2D" parent="."]
 [connection signal="body_entered" from="Killzone_ground" to="Killzone_ground/CollisionShape2D" method="_on_Killzone_ground_body_entered"]
