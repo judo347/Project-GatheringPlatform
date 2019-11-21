@@ -19,6 +19,7 @@ tile_set = ExtResource( 2 )
 format = 1
 
 [node name="Player" parent="." instance=ExtResource( 3 )]
+editor/display_folded = true
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2( -64, -128 )

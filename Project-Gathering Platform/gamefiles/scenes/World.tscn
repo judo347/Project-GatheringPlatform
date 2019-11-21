@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=2]
+[gd_scene load_steps=46 format=2]
 
 [ext_resource path="res://gamefiles/scripts/Benches.gd" type="Script" id=1]
 [ext_resource path="res://gamefiles/scripts/bench_converter.gd" type="Script" id=2]
@@ -77,6 +77,11 @@ _data = {
 [sub_resource type="Curve2D" id=12]
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, -320, -192, 0, 0, 0, 0, -448, -192, 43.7129, -58.7863, -43.7129, 58.7863, -544, -256, 0, 0, 0, 0, -576, 64, 0, 0, 0, 0, -672, 64 )
+}
+
+[sub_resource type="Curve2D" id=13]
+_data = {
+"points": PoolVector2Array(  )
 }
 
 [node name="World" type="Node"]
@@ -596,6 +601,7 @@ margin_bottom = 896.0
 [node name="VBoxContainer" type="VBoxContainer" parent="UImaster/UIFullscreens/AchievementMenu/ScrollContainer"]
 
 [node name="CharPathFinding" type="Node" parent="."]
+editor/display_folded = true
 script = ExtResource( 32 )
 
 [node name="Slot1To3" type="Path2D" parent="CharPathFinding"]
@@ -660,6 +666,7 @@ visible = false
 texture = ExtResource( 10 )
 
 [node name="Slot2To3" type="Path2D" parent="CharPathFinding"]
+curve = SubResource( 13 )
 
 [node name="PathFollow2D" type="PathFollow2D" parent="CharPathFinding/Slot2To3"]
 position = Vector2( -320, -192 )

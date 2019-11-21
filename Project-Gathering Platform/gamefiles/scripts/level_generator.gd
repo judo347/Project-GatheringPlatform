@@ -23,7 +23,7 @@ func populate_scene():
 		
 	# Place materials
 	for material in materials_generated:
-		place_material(material, enums.MaterialEnum.WOOD)
+		place_material(material, utilities.get_rand_material_enum())
 
 	# place_material(Vector2(200, 0), enums.MaterialEnum.GRASS)
 	# place_material_with_amount(Vector2(200, -100), enums.MaterialEnum.STONE, 10)

@@ -12,3 +12,11 @@ func character_enum_to_int(type):
 		enums.CharacterEnum.ONE: return 1
 		enums.CharacterEnum.TWO: return 2
 		enums.CharacterEnum.THREE: return 3
+
+func get_rand_material_enum():
+	var number = get_rand(1,3)
+	
+	match number:
+		1: return enums.MaterialEnum.GRASS
+		2: return enums.MaterialEnum.STONE
+		3: return enums.MaterialEnum.WOOD
