@@ -13,6 +13,7 @@ var jumps_used = 0
 
 var slide_destination = 0
 var is_sliding = false
+var is_sliding_left
 
 var motion = Vector2()
 
@@ -68,13 +69,23 @@ func slide(delta):
 				# Slide direction
 				if is_facing_right:
 					slide_destination = get_global_position().x + SLIDE_DISTANCE
+					is_sliding_left = false
 				else:
 					slide_destination = get_global_position().x - SLIDE_DISTANCE
+					is_sliding_left = true
 				
 				is_sliding = true
 				print("Slide activated")
 	
 	var current_position = get_global_position()
+	
+	if is_sliding:
+		if is_sliding_left:
+			if Input.is_action_pressed("ui_right"):
+				is_sliding = false
+		else:
+			if Input.is_action_pressed("ui_left"):
+				is_sliding = false
 	
 	if !is_sliding:
 		return
