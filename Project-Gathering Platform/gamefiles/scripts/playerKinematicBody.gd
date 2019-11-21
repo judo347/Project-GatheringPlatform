@@ -4,8 +4,8 @@ const UP = Vector2(0, -1)
 const GRAVITY_ACC = 20
 const MOVEMENTSPEED = 400
 const JUMP_HEIGHT = -800
-const SLIDE_FORCE = 500
-const SLIDE_SPEED = 400
+const SLIDE_DISTANCE = 400
+const SLIDE_SPEED = 600
 
 var is_facing_right = true
 
@@ -67,9 +67,9 @@ func slide(delta):
 			if Input.is_action_just_pressed("ui_down"):
 				# Slide direction
 				if is_facing_right:
-					slide_destination = get_global_position().x + SLIDE_FORCE
+					slide_destination = get_global_position().x + SLIDE_DISTANCE
 				else:
-					slide_destination = get_global_position().x - SLIDE_FORCE
+					slide_destination = get_global_position().x - SLIDE_DISTANCE
 				
 				is_sliding = true
 				print("Slide activated")
