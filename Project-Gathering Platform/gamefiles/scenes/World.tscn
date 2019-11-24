@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=2]
+[gd_scene load_steps=52 format=2]
 
 [ext_resource path="res://gamefiles/scripts/Benches.gd" type="Script" id=1]
 [ext_resource path="res://gamefiles/scripts/bench_converter.gd" type="Script" id=2]
@@ -7,31 +7,36 @@
 [ext_resource path="res://resources/01/CharModBench001.png" type="Texture" id=5]
 [ext_resource path="res://gamefiles/scripts/bench_unique_abilities.gd" type="Script" id=6]
 [ext_resource path="res://resources/01/BenchUniqueAbilities001.png" type="Texture" id=7]
-[ext_resource path="res://gamefiles/scenes/Player.tscn" type="PackedScene" id=8]
-[ext_resource path="res://gamefiles/scripts/CharacterSelectionManager.gd" type="Script" id=9]
-[ext_resource path="res://resources/01/Character001.png" type="Texture" id=10]
-[ext_resource path="res://resources/01/Character002.png" type="Texture" id=11]
-[ext_resource path="res://resources/01/Character003.png" type="Texture" id=12]
-[ext_resource path="res://gamefiles/scripts/Portal.gd" type="Script" id=13]
-[ext_resource path="res://resources/01/Portal001.png" type="Texture" id=14]
-[ext_resource path="res://gamefiles/tilesets/tileset02.tres" type="TileSet" id=15]
-[ext_resource path="res://gamefiles/scripts/UIManager.gd" type="Script" id=16]
-[ext_resource path="res://gamefiles/scripts/MaterialConverter.gd" type="Script" id=17]
-[ext_resource path="res://resources/01/Material002.png" type="Texture" id=18]
-[ext_resource path="res://resources/01/Arrow001.png" type="Texture" id=19]
-[ext_resource path="res://resources/01/Skillpoint001.png" type="Texture" id=20]
-[ext_resource path="res://resources/01/Material003.png" type="Texture" id=21]
-[ext_resource path="res://resources/01/Material001.png" type="Texture" id=22]
-[ext_resource path="res://gamefiles/scripts/CharModder.gd" type="Script" id=23]
-[ext_resource path="res://resources/01/CharMod_Deselected001.png" type="Texture" id=24]
-[ext_resource path="res://resources/01/CharModAbility_Slide001.png" type="Texture" id=25]
-[ext_resource path="res://resources/01/CharModAbility_DoubleJump001.png" type="Texture" id=26]
-[ext_resource path="res://gamefiles/scripts/UniqueAbilities.gd" type="Script" id=27]
-[ext_resource path="res://resources/01/UniqueAbilities_noDeathPenalty001.png" type="Texture" id=28]
-[ext_resource path="res://resources/01/UniqueAbilities_worldFlip001.png" type="Texture" id=29]
-[ext_resource path="res://gamefiles/scripts/PermanentUIManager.gd" type="Script" id=30]
-[ext_resource path="res://gamefiles/scripts/AchievementManager.gd" type="Script" id=31]
-[ext_resource path="res://gamefiles/scripts/CharPathFinding.gd" type="Script" id=32]
+[ext_resource path="res://gamefiles/scripts/bench_levelModder.gd" type="Script" id=8]
+[ext_resource path="res://resources/01/BenchLevelMod001.png" type="Texture" id=9]
+[ext_resource path="res://gamefiles/scenes/Player.tscn" type="PackedScene" id=10]
+[ext_resource path="res://gamefiles/scripts/CharacterSelectionManager.gd" type="Script" id=11]
+[ext_resource path="res://resources/01/Character001.png" type="Texture" id=12]
+[ext_resource path="res://resources/01/Character002.png" type="Texture" id=13]
+[ext_resource path="res://resources/01/Character003.png" type="Texture" id=14]
+[ext_resource path="res://gamefiles/scripts/Portal.gd" type="Script" id=15]
+[ext_resource path="res://resources/01/Portal001.png" type="Texture" id=16]
+[ext_resource path="res://gamefiles/tilesets/tileset02.tres" type="TileSet" id=17]
+[ext_resource path="res://gamefiles/scripts/UIManager.gd" type="Script" id=18]
+[ext_resource path="res://gamefiles/scripts/MaterialConverter.gd" type="Script" id=19]
+[ext_resource path="res://resources/01/Material002.png" type="Texture" id=20]
+[ext_resource path="res://resources/01/Arrow001.png" type="Texture" id=21]
+[ext_resource path="res://resources/01/Skillpoint001.png" type="Texture" id=22]
+[ext_resource path="res://resources/01/Material003.png" type="Texture" id=23]
+[ext_resource path="res://resources/01/Material001.png" type="Texture" id=24]
+[ext_resource path="res://gamefiles/scripts/CharModder.gd" type="Script" id=25]
+[ext_resource path="res://resources/01/CharMod_Deselected001.png" type="Texture" id=26]
+[ext_resource path="res://resources/01/CharModAbility_Slide001.png" type="Texture" id=27]
+[ext_resource path="res://resources/01/CharModAbility_DoubleJump001.png" type="Texture" id=28]
+[ext_resource path="res://gamefiles/scripts/UniqueAbilities.gd" type="Script" id=29]
+[ext_resource path="res://resources/01/UniqueAbilities_noDeathPenalty001.png" type="Texture" id=30]
+[ext_resource path="res://resources/01/UniqueAbilities_worldFlip001.png" type="Texture" id=31]
+[ext_resource path="res://gamefiles/scripts/PermanentUIManager.gd" type="Script" id=32]
+[ext_resource path="res://gamefiles/scripts/AchievementManager.gd" type="Script" id=33]
+[ext_resource path="res://gamefiles/scripts/LevelModder.gd" type="Script" id=34]
+[ext_resource path="res://resources/01/UIMinus001.png" type="Texture" id=35]
+[ext_resource path="res://resources/01/UIPlus001.png" type="Texture" id=36]
+[ext_resource path="res://gamefiles/scripts/CharPathFinding.gd" type="Script" id=37]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 64, 32 )
@@ -43,43 +48,46 @@ extents = Vector2( 64, 64 )
 extents = Vector2( 64, 64 )
 
 [sub_resource type="RectangleShape2D" id=4]
-extents = Vector2( 832, 32 )
-
-[sub_resource type="RectangleShape2D" id=5]
-extents = Vector2( 32, 448 )
-
-[sub_resource type="RectangleShape2D" id=6]
-extents = Vector2( 32, 32 )
-
-[sub_resource type="RectangleShape2D" id=7]
 extents = Vector2( 64, 64 )
 
-[sub_resource type="Curve2D" id=8]
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 832, 32 )
+
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 32, 448 )
+
+[sub_resource type="RectangleShape2D" id=7]
+extents = Vector2( 32, 32 )
+
+[sub_resource type="RectangleShape2D" id=8]
+extents = Vector2( 64, 64 )
+
+[sub_resource type="Curve2D" id=9]
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, -672, 64, 0, 0, 0, 0, -576, 64, -28.1294, 35.1618, 28.1294, -35.1618, -544, -128, 0, 0, 0, 0, -448, -192, 0, 0, 0, 0, -320, -192, 0, 0, 0, 0, -192, -192, -42.1942, 0, 42.1942, 0, -96, -256, 0, 0, 0, 0, 64, -256, 0, 0, 0, 0, 192, -256 )
 }
 
-[sub_resource type="Curve2D" id=9]
+[sub_resource type="Curve2D" id=10]
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 192, -256, 0, 0, 0, 0, 64, -256, 62.5773, 1.36038, -62.5773, -1.36038, 0, -320, 0, 0, 0, 0, -192, -192, 0, 0, 0, 0, -448, -192, 68.0188, -12.2434, -68.0188, 12.2434, -512, -256, 0, 0, 0, 0, -576, 64, 0, 0, 0, 0, -672, 64 )
 }
 
-[sub_resource type="Curve2D" id=10]
+[sub_resource type="Curve2D" id=11]
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, -672, 64, 0, 0, 0, 0, -576, 64, -34.0094, 40.8113, 34.0094, -40.8113, -544, -128, 0, 0, 0, 0, -448, -192, 0, 0, 0, 0, -320, -192 )
 }
 
-[sub_resource type="Curve2D" id=11]
+[sub_resource type="Curve2D" id=12]
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 192, -256, 0, 0, 0, 0, 64, -256, 74.8207, -25.8471, -74.8207, 25.8471, -64, -320, 0, 0, 0, 0, -192, -192, 0, 0, 0, 0, -320, -192 )
 }
 
-[sub_resource type="Curve2D" id=12]
+[sub_resource type="Curve2D" id=13]
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, -320, -192, 0, 0, 0, 0, -448, -192, 43.7129, -58.7863, -43.7129, 58.7863, -544, -256, 0, 0, 0, 0, -576, 64, 0, 0, 0, 0, -672, 64 )
 }
 
-[sub_resource type="Curve2D" id=13]
+[sub_resource type="Curve2D" id=14]
 _data = {
 "points": PoolVector2Array(  )
 }
@@ -95,7 +103,6 @@ editor/display_folded = true
 script = ExtResource( 1 )
 
 [node name="Converter" type="Area2D" parent="Benches"]
-editor/display_folded = true
 position = Vector2( 320, 320 )
 script = ExtResource( 2 )
 
@@ -135,7 +142,21 @@ __meta__ = {
 "_edit_group_": true
 }
 
-[node name="Player" parent="." instance=ExtResource( 8 )]
+[node name="LevelModder" type="Area2D" parent="Benches"]
+position = Vector2( -576, 320 )
+script = ExtResource( 8 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Benches/LevelModder"]
+scale = Vector2( 2, 2 )
+texture = ExtResource( 9 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Benches/LevelModder"]
+shape = SubResource( 4 )
+
+[node name="Player" parent="." instance=ExtResource( 10 )]
 
 [node name="OutOfBounds" type="Node2D" parent="."]
 editor/display_folded = true
@@ -144,23 +165,23 @@ editor/display_folded = true
 
 [node name="Bottom" type="CollisionShape2D" parent="OutOfBounds/StaticBody2D"]
 position = Vector2( 0, 480 )
-shape = SubResource( 4 )
+shape = SubResource( 5 )
 
 [node name="Left" type="CollisionShape2D" parent="OutOfBounds/StaticBody2D"]
 position = Vector2( -800, 0 )
-shape = SubResource( 5 )
+shape = SubResource( 6 )
 
 [node name="Right" type="CollisionShape2D" parent="OutOfBounds/StaticBody2D"]
 position = Vector2( 800, 0 )
-shape = SubResource( 5 )
+shape = SubResource( 6 )
 
 [node name="Top" type="CollisionShape2D" parent="OutOfBounds/StaticBody2D"]
 position = Vector2( 0, -480 )
-shape = SubResource( 4 )
+shape = SubResource( 5 )
 
 [node name="CharacterSelection" type="Node2D" parent="."]
 editor/display_folded = true
-script = ExtResource( 9 )
+script = ExtResource( 11 )
 
 [node name="Slot1" type="Area2D" parent="CharacterSelection"]
 editor/display_folded = true
@@ -171,10 +192,10 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterSelection/Slot1"]
 scale = Vector2( 2, 2 )
-shape = SubResource( 6 )
+shape = SubResource( 7 )
 
 [node name="Sprite" type="Sprite" parent="CharacterSelection/Slot1"]
-texture = ExtResource( 10 )
+texture = ExtResource( 12 )
 
 [node name="Slot2" type="Area2D" parent="CharacterSelection"]
 editor/display_folded = true
@@ -185,10 +206,10 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterSelection/Slot2"]
 scale = Vector2( 2, 2 )
-shape = SubResource( 6 )
+shape = SubResource( 7 )
 
 [node name="Sprite" type="Sprite" parent="CharacterSelection/Slot2"]
-texture = ExtResource( 11 )
+texture = ExtResource( 13 )
 
 [node name="Slot3" type="Area2D" parent="CharacterSelection"]
 position = Vector2( 192, -256 )
@@ -198,32 +219,31 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterSelection/Slot3"]
 scale = Vector2( 2, 2 )
-shape = SubResource( 6 )
+shape = SubResource( 7 )
 
 [node name="Sprite" type="Sprite" parent="CharacterSelection/Slot3"]
-texture = ExtResource( 12 )
+texture = ExtResource( 14 )
 
 [node name="Portal" type="Area2D" parent="."]
 position = Vector2( 672, 64 )
-script = ExtResource( 13 )
+script = ExtResource( 15 )
 __meta__ = {
 "_edit_group_": true
 }
 
 [node name="Sprite" type="Sprite" parent="Portal"]
-texture = ExtResource( 14 )
+texture = ExtResource( 16 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Portal"]
-shape = SubResource( 7 )
+shape = SubResource( 8 )
 
 [node name="TileMap" type="TileMap" parent="."]
-tile_set = ExtResource( 15 )
+tile_set = ExtResource( 17 )
 format = 1
-tile_data = PoolIntArray( -196607, 0, 0, -196606, 0, 0, -196605, 0, 0, -196604, 0, 0, -65543, 0, 0, -65542, 0, 0, -65541, 0, 0, -65540, 0, 0, 196596, 0, 0, 196597, 0, 0, 196598, 0, 0, 131079, 0, 0, 131080, 0, 0, 131081, 0, 0, 131082, 0, 0, 131083, 0, 0, 458740, 0, 0, 458741, 0, 0, 458742, 0, 0, 458743, 0, 0, 458744, 0, 0, 458745, 0, 0, 458746, 0, 0, 458747, 0, 0, 458748, 0, 0, 458749, 0, 0, 458750, 0, 0, 458751, 0, 0, 393216, 0, 0, 393217, 0, 0, 393218, 0, 0, 393219, 0, 0, 393220, 0, 0, 393221, 0, 0, 393222, 0, 0, 393223, 0, 0, 393224, 0, 0, 393225, 0, 0, 393226, 0, 0, 393227, 0, 0 )
+tile_data = PoolIntArray( -196607, 0, 0, -196606, 0, 0, -196605, 0, 0, -196604, 0, 0, -65543, 0, 0, -65542, 0, 0, -65541, 0, 0, -65540, 0, 0, -131061, 0, 0, 196596, 0, 0, 196597, 0, 0, 196598, 0, 0, 131079, 0, 0, 131080, 0, 0, 131081, 0, 0, 131082, 0, 0, 131083, 0, 0, 458740, 0, 0, 458741, 0, 0, 458742, 0, 0, 458743, 0, 0, 458744, 0, 0, 458745, 0, 0, 458746, 0, 0, 458747, 0, 0, 458748, 0, 0, 458749, 0, 0, 458750, 0, 0, 458751, 0, 0, 393216, 0, 0, 393217, 0, 0, 393218, 0, 0, 393219, 0, 0, 393220, 0, 0, 393221, 0, 0, 393222, 0, 0, 393223, 0, 0, 393224, 0, 0, 393225, 0, 0, 393226, 0, 0, 393227, 0, 0 )
 
 [node name="UImaster" type="Node" parent="."]
-editor/display_folded = true
-script = ExtResource( 16 )
+script = ExtResource( 18 )
 
 [node name="MaterialConverter" type="Panel" parent="UImaster"]
 editor/display_folded = true
@@ -232,7 +252,7 @@ margin_right = 240.0
 margin_bottom = 240.0
 grow_horizontal = 2
 size_flags_horizontal = 0
-script = ExtResource( 17 )
+script = ExtResource( 19 )
 
 [node name="VBoxContainer" type="VBoxContainer" parent="UImaster/MaterialConverter"]
 editor/display_folded = true
@@ -246,7 +266,7 @@ margin_bottom = 64.0
 [node name="Resource" type="TextureRect" parent="UImaster/MaterialConverter/VBoxContainer/HBoxContainer"]
 margin_right = 64.0
 margin_bottom = 64.0
-texture = ExtResource( 18 )
+texture = ExtResource( 20 )
 
 [node name="Resource_count" type="Label" parent="UImaster/MaterialConverter/VBoxContainer/HBoxContainer"]
 margin_left = 68.0
@@ -259,7 +279,7 @@ text = "3"
 margin_left = 80.0
 margin_right = 144.0
 margin_bottom = 64.0
-texture = ExtResource( 19 )
+texture = ExtResource( 21 )
 
 [node name="Skillpoint_count" type="Label" parent="UImaster/MaterialConverter/VBoxContainer/HBoxContainer"]
 margin_left = 148.0
@@ -272,7 +292,7 @@ text = "1"
 margin_left = 160.0
 margin_right = 224.0
 margin_bottom = 64.0
-texture = ExtResource( 20 )
+texture = ExtResource( 22 )
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="UImaster/MaterialConverter/VBoxContainer"]
 margin_top = 68.0
@@ -282,7 +302,7 @@ margin_bottom = 132.0
 [node name="Resource" type="TextureRect" parent="UImaster/MaterialConverter/VBoxContainer/HBoxContainer2"]
 margin_right = 64.0
 margin_bottom = 64.0
-texture = ExtResource( 21 )
+texture = ExtResource( 23 )
 
 [node name="Resource_count" type="Label" parent="UImaster/MaterialConverter/VBoxContainer/HBoxContainer2"]
 margin_left = 68.0
@@ -295,7 +315,7 @@ text = "3"
 margin_left = 80.0
 margin_right = 144.0
 margin_bottom = 64.0
-texture = ExtResource( 19 )
+texture = ExtResource( 21 )
 
 [node name="Skillpoint_count" type="Label" parent="UImaster/MaterialConverter/VBoxContainer/HBoxContainer2"]
 margin_left = 148.0
@@ -308,7 +328,7 @@ text = "1"
 margin_left = 160.0
 margin_right = 224.0
 margin_bottom = 64.0
-texture = ExtResource( 20 )
+texture = ExtResource( 22 )
 
 [node name="HBoxContainer3" type="HBoxContainer" parent="UImaster/MaterialConverter/VBoxContainer"]
 margin_top = 136.0
@@ -318,7 +338,7 @@ margin_bottom = 200.0
 [node name="Resource" type="TextureRect" parent="UImaster/MaterialConverter/VBoxContainer/HBoxContainer3"]
 margin_right = 64.0
 margin_bottom = 64.0
-texture = ExtResource( 22 )
+texture = ExtResource( 24 )
 
 [node name="Resource_count" type="Label" parent="UImaster/MaterialConverter/VBoxContainer/HBoxContainer3"]
 margin_left = 68.0
@@ -331,7 +351,7 @@ text = "3"
 margin_left = 80.0
 margin_right = 144.0
 margin_bottom = 64.0
-texture = ExtResource( 19 )
+texture = ExtResource( 21 )
 
 [node name="Skillpoint_count" type="Label" parent="UImaster/MaterialConverter/VBoxContainer/HBoxContainer3"]
 margin_left = 148.0
@@ -344,16 +364,16 @@ text = "1"
 margin_left = 160.0
 margin_right = 224.0
 margin_bottom = 64.0
-texture = ExtResource( 20 )
+texture = ExtResource( 22 )
 
 [node name="CharModder" type="Panel" parent="UImaster"]
-editor/display_folded = true
 visible = false
 margin_right = 240.0
 margin_bottom = 240.0
-script = ExtResource( 23 )
+script = ExtResource( 25 )
 
 [node name="VBoxContainer" type="VBoxContainer" parent="UImaster/CharModder"]
+editor/display_folded = true
 margin_right = 40.0
 margin_bottom = 40.0
 
@@ -372,12 +392,12 @@ margin_bottom = 64.0
 [node name="TextureRect2" type="TextureRect" parent="UImaster/CharModder/VBoxContainer/HBoxContainer/Slide/Slide"]
 margin_right = 64.0
 margin_bottom = 64.0
-texture = ExtResource( 24 )
+texture = ExtResource( 26 )
 
 [node name="TextureRect" type="TextureRect" parent="UImaster/CharModder/VBoxContainer/HBoxContainer/Slide/Slide"]
 margin_right = 64.0
 margin_bottom = 64.0
-texture = ExtResource( 25 )
+texture = ExtResource( 27 )
 
 [node name="Label" type="Label" parent="UImaster/CharModder/VBoxContainer/HBoxContainer/Slide"]
 margin_top = 68.0
@@ -397,12 +417,12 @@ margin_bottom = 64.0
 [node name="TextureRect2" type="TextureRect" parent="UImaster/CharModder/VBoxContainer/HBoxContainer/DoubleJump/DoubleJump"]
 margin_right = 64.0
 margin_bottom = 64.0
-texture = ExtResource( 24 )
+texture = ExtResource( 26 )
 
 [node name="TextureRect" type="TextureRect" parent="UImaster/CharModder/VBoxContainer/HBoxContainer/DoubleJump/DoubleJump"]
 margin_right = 64.0
 margin_bottom = 64.0
-texture = ExtResource( 26 )
+texture = ExtResource( 28 )
 
 [node name="Label" type="Label" parent="UImaster/CharModder/VBoxContainer/HBoxContainer/DoubleJump"]
 margin_top = 68.0
@@ -415,7 +435,7 @@ editor/display_folded = true
 visible = false
 margin_right = 240.0
 margin_bottom = 240.0
-script = ExtResource( 27 )
+script = ExtResource( 29 )
 
 [node name="VBoxContainer" type="VBoxContainer" parent="UImaster/UniqueAbilities"]
 margin_right = 40.0
@@ -436,12 +456,12 @@ margin_bottom = 64.0
 [node name="TextureRect2" type="TextureRect" parent="UImaster/UniqueAbilities/VBoxContainer/HBoxContainer/NoDeathPenalty/CenterContainer"]
 margin_right = 64.0
 margin_bottom = 64.0
-texture = ExtResource( 24 )
+texture = ExtResource( 26 )
 
 [node name="TextureRect" type="TextureRect" parent="UImaster/UniqueAbilities/VBoxContainer/HBoxContainer/NoDeathPenalty/CenterContainer"]
 margin_right = 64.0
 margin_bottom = 64.0
-texture = ExtResource( 28 )
+texture = ExtResource( 30 )
 
 [node name="Label" type="Label" parent="UImaster/UniqueAbilities/VBoxContainer/HBoxContainer/NoDeathPenalty"]
 margin_top = 68.0
@@ -461,12 +481,12 @@ margin_bottom = 64.0
 [node name="TextureRect2" type="TextureRect" parent="UImaster/UniqueAbilities/VBoxContainer/HBoxContainer/WorldFlip/CenterContainer"]
 margin_right = 64.0
 margin_bottom = 64.0
-texture = ExtResource( 24 )
+texture = ExtResource( 26 )
 
 [node name="TextureRect" type="TextureRect" parent="UImaster/UniqueAbilities/VBoxContainer/HBoxContainer/WorldFlip/CenterContainer"]
 margin_right = 64.0
 margin_bottom = 64.0
-texture = ExtResource( 29 )
+texture = ExtResource( 31 )
 
 [node name="Label" type="Label" parent="UImaster/UniqueAbilities/VBoxContainer/HBoxContainer/WorldFlip"]
 margin_top = 68.0
@@ -475,8 +495,9 @@ margin_bottom = 82.0
 text = "Cost: x"
 
 [node name="PermanentUI" type="Node2D" parent="UImaster"]
+editor/display_folded = true
 position = Vector2( -768, -448 )
-script = ExtResource( 30 )
+script = ExtResource( 32 )
 
 [node name="MarginContainer" type="MarginContainer" parent="UImaster/PermanentUI"]
 margin_left = 10.0
@@ -499,7 +520,7 @@ margin_bottom = 64.0
 [node name="TextureRect" type="TextureRect" parent="UImaster/PermanentUI/MarginContainer/HBoxContainer/InfoBars/BarStone"]
 margin_right = 64.0
 margin_bottom = 64.0
-texture = ExtResource( 18 )
+texture = ExtResource( 20 )
 
 [node name="Label" type="Label" parent="UImaster/PermanentUI/MarginContainer/HBoxContainer/InfoBars/BarStone"]
 margin_left = 68.0
@@ -522,7 +543,7 @@ margin_bottom = 132.0
 [node name="TextureRect" type="TextureRect" parent="UImaster/PermanentUI/MarginContainer/HBoxContainer/InfoBars/BarWood"]
 margin_right = 64.0
 margin_bottom = 64.0
-texture = ExtResource( 21 )
+texture = ExtResource( 23 )
 
 [node name="Label" type="Label" parent="UImaster/PermanentUI/MarginContainer/HBoxContainer/InfoBars/BarWood"]
 margin_left = 68.0
@@ -545,7 +566,7 @@ margin_bottom = 200.0
 [node name="TextureRect" type="TextureRect" parent="UImaster/PermanentUI/MarginContainer/HBoxContainer/InfoBars/BarGrass"]
 margin_right = 64.0
 margin_bottom = 64.0
-texture = ExtResource( 22 )
+texture = ExtResource( 24 )
 
 [node name="Label" type="Label" parent="UImaster/PermanentUI/MarginContainer/HBoxContainer/InfoBars/BarGrass"]
 margin_left = 68.0
@@ -568,7 +589,7 @@ margin_bottom = 268.0
 [node name="TextureRect" type="TextureRect" parent="UImaster/PermanentUI/MarginContainer/HBoxContainer/InfoBars/BarSkillpoint"]
 margin_right = 64.0
 margin_bottom = 64.0
-texture = ExtResource( 20 )
+texture = ExtResource( 22 )
 
 [node name="Label" type="Label" parent="UImaster/PermanentUI/MarginContainer/HBoxContainer/InfoBars/BarSkillpoint"]
 margin_left = 68.0
@@ -584,6 +605,7 @@ margin_right = 139.0
 margin_bottom = 39.0
 
 [node name="UIFullscreens" type="Node2D" parent="UImaster"]
+editor/display_folded = true
 
 [node name="AchievementMenu" type="Panel" parent="UImaster/UIFullscreens"]
 editor/display_folded = true
@@ -592,7 +614,7 @@ margin_left = -768.0
 margin_top = -448.0
 margin_right = 768.0
 margin_bottom = 448.0
-script = ExtResource( 31 )
+script = ExtResource( 33 )
 
 [node name="ScrollContainer" type="ScrollContainer" parent="UImaster/UIFullscreens/AchievementMenu"]
 margin_right = 1536.0
@@ -600,12 +622,110 @@ margin_bottom = 896.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="UImaster/UIFullscreens/AchievementMenu/ScrollContainer"]
 
+[node name="LevelModder" type="Panel" parent="UImaster"]
+margin_right = 224.0
+margin_bottom = 128.0
+script = ExtResource( 34 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UImaster/LevelModder"]
+margin_left = 5.0
+margin_top = 5.0
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="LevelVBox" type="VBoxContainer" parent="UImaster/LevelModder/VBoxContainer"]
+margin_right = 196.0
+margin_bottom = 50.0
+
+[node name="Label" type="Label" parent="UImaster/LevelModder/VBoxContainer/LevelVBox"]
+margin_right = 196.0
+margin_bottom = 14.0
+text = "Level"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UImaster/LevelModder/VBoxContainer/LevelVBox"]
+margin_top = 18.0
+margin_right = 196.0
+margin_bottom = 50.0
+
+[node name="DangerBox" type="HBoxContainer" parent="UImaster/LevelModder/VBoxContainer/LevelVBox/VBoxContainer"]
+margin_right = 196.0
+margin_bottom = 32.0
+
+[node name="Label" type="Label" parent="UImaster/LevelModder/VBoxContainer/LevelVBox/VBoxContainer/DangerBox"]
+margin_top = 9.0
+margin_right = 45.0
+margin_bottom = 23.0
+text = "Danger"
+
+[node name="TexMinus" type="TextureRect" parent="UImaster/LevelModder/VBoxContainer/LevelVBox/VBoxContainer/DangerBox"]
+margin_left = 49.0
+margin_right = 81.0
+margin_bottom = 32.0
+texture = ExtResource( 35 )
+
+[node name="Value" type="Label" parent="UImaster/LevelModder/VBoxContainer/LevelVBox/VBoxContainer/DangerBox"]
+margin_left = 85.0
+margin_top = 9.0
+margin_right = 93.0
+margin_bottom = 23.0
+text = "0"
+
+[node name="TexPlus" type="TextureRect" parent="UImaster/LevelModder/VBoxContainer/LevelVBox/VBoxContainer/DangerBox"]
+margin_left = 97.0
+margin_right = 129.0
+margin_bottom = 32.0
+texture = ExtResource( 36 )
+
+[node name="PlayerVBox" type="VBoxContainer" parent="UImaster/LevelModder/VBoxContainer"]
+margin_top = 54.0
+margin_right = 196.0
+margin_bottom = 104.0
+
+[node name="Label" type="Label" parent="UImaster/LevelModder/VBoxContainer/PlayerVBox"]
+margin_right = 196.0
+margin_bottom = 14.0
+text = "Player"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UImaster/LevelModder/VBoxContainer/PlayerVBox"]
+margin_top = 18.0
+margin_right = 196.0
+margin_bottom = 50.0
+
+[node name="MovementSpeedBox" type="HBoxContainer" parent="UImaster/LevelModder/VBoxContainer/PlayerVBox/VBoxContainer"]
+margin_right = 196.0
+margin_bottom = 32.0
+
+[node name="Label" type="Label" parent="UImaster/LevelModder/VBoxContainer/PlayerVBox/VBoxContainer/MovementSpeedBox"]
+margin_top = 9.0
+margin_right = 112.0
+margin_bottom = 23.0
+text = "Movement speed"
+
+[node name="TexMinus" type="TextureRect" parent="UImaster/LevelModder/VBoxContainer/PlayerVBox/VBoxContainer/MovementSpeedBox"]
+margin_left = 116.0
+margin_right = 148.0
+margin_bottom = 32.0
+texture = ExtResource( 35 )
+
+[node name="Value" type="Label" parent="UImaster/LevelModder/VBoxContainer/PlayerVBox/VBoxContainer/MovementSpeedBox"]
+margin_left = 152.0
+margin_top = 9.0
+margin_right = 160.0
+margin_bottom = 23.0
+text = "0"
+
+[node name="TexPlus" type="TextureRect" parent="UImaster/LevelModder/VBoxContainer/PlayerVBox/VBoxContainer/MovementSpeedBox"]
+margin_left = 164.0
+margin_right = 196.0
+margin_bottom = 32.0
+texture = ExtResource( 36 )
+
 [node name="CharPathFinding" type="Node" parent="."]
 editor/display_folded = true
-script = ExtResource( 32 )
+script = ExtResource( 37 )
 
 [node name="Slot1To3" type="Path2D" parent="CharPathFinding"]
-curve = SubResource( 8 )
+curve = SubResource( 9 )
 
 [node name="PathFollow2D" type="PathFollow2D" parent="CharPathFinding/Slot1To3"]
 position = Vector2( -672, 64 )
@@ -614,10 +734,10 @@ loop = false
 
 [node name="Sprite" type="Sprite" parent="CharPathFinding/Slot1To3/PathFollow2D"]
 visible = false
-texture = ExtResource( 12 )
+texture = ExtResource( 14 )
 
 [node name="Slot3To1" type="Path2D" parent="CharPathFinding"]
-curve = SubResource( 9 )
+curve = SubResource( 10 )
 
 [node name="PathFollow2D" type="PathFollow2D" parent="CharPathFinding/Slot3To1"]
 position = Vector2( 192, -256 )
@@ -627,10 +747,10 @@ loop = false
 
 [node name="Sprite" type="Sprite" parent="CharPathFinding/Slot3To1/PathFollow2D"]
 visible = false
-texture = ExtResource( 10 )
+texture = ExtResource( 12 )
 
 [node name="Slot1To2" type="Path2D" parent="CharPathFinding"]
-curve = SubResource( 10 )
+curve = SubResource( 11 )
 
 [node name="PathFollow2D" type="PathFollow2D" parent="CharPathFinding/Slot1To2"]
 position = Vector2( -672, 64 )
@@ -639,10 +759,10 @@ loop = false
 
 [node name="Sprite" type="Sprite" parent="CharPathFinding/Slot1To2/PathFollow2D"]
 visible = false
-texture = ExtResource( 11 )
+texture = ExtResource( 13 )
 
 [node name="Slot3To2" type="Path2D" parent="CharPathFinding"]
-curve = SubResource( 11 )
+curve = SubResource( 12 )
 
 [node name="PathFollow2D" type="PathFollow2D" parent="CharPathFinding/Slot3To2"]
 position = Vector2( 192, -256 )
@@ -651,10 +771,10 @@ loop = false
 
 [node name="Sprite" type="Sprite" parent="CharPathFinding/Slot3To2/PathFollow2D"]
 visible = false
-texture = ExtResource( 11 )
+texture = ExtResource( 13 )
 
 [node name="Slot2To1" type="Path2D" parent="CharPathFinding"]
-curve = SubResource( 12 )
+curve = SubResource( 13 )
 
 [node name="PathFollow2D" type="PathFollow2D" parent="CharPathFinding/Slot2To1"]
 position = Vector2( -320, -192 )
@@ -663,10 +783,10 @@ loop = false
 
 [node name="Sprite" type="Sprite" parent="CharPathFinding/Slot2To1/PathFollow2D"]
 visible = false
-texture = ExtResource( 10 )
+texture = ExtResource( 12 )
 
 [node name="Slot2To3" type="Path2D" parent="CharPathFinding"]
-curve = SubResource( 13 )
+curve = SubResource( 14 )
 
 [node name="PathFollow2D" type="PathFollow2D" parent="CharPathFinding/Slot2To3"]
 position = Vector2( -320, -192 )
@@ -695,3 +815,11 @@ visible = false
 [connection signal="mouse_exited" from="UImaster/UniqueAbilities/VBoxContainer/HBoxContainer/NoDeathPenalty/CenterContainer/TextureRect" to="UImaster/UniqueAbilities" method="mouse_exit_ability" binds= [ 1 ]]
 [connection signal="mouse_entered" from="UImaster/UniqueAbilities/VBoxContainer/HBoxContainer/WorldFlip/CenterContainer/TextureRect" to="UImaster/UniqueAbilities" method="mouse_entered_ability" binds= [ 0 ]]
 [connection signal="mouse_exited" from="UImaster/UniqueAbilities/VBoxContainer/HBoxContainer/WorldFlip/CenterContainer/TextureRect" to="UImaster/UniqueAbilities" method="mouse_exit_ability" binds= [ 0 ]]
+[connection signal="mouse_entered" from="UImaster/LevelModder/VBoxContainer/LevelVBox/VBoxContainer/DangerBox/TexMinus" to="UImaster/LevelModder" method="mouse_entered_plusORminus" binds= [ 0, false ]]
+[connection signal="mouse_exited" from="UImaster/LevelModder/VBoxContainer/LevelVBox/VBoxContainer/DangerBox/TexMinus" to="UImaster/LevelModder" method="mouse_exited_plusORminus" binds= [ 0, false ]]
+[connection signal="mouse_entered" from="UImaster/LevelModder/VBoxContainer/LevelVBox/VBoxContainer/DangerBox/TexPlus" to="UImaster/LevelModder" method="mouse_entered_plusORminus" binds= [ 0, true ]]
+[connection signal="mouse_exited" from="UImaster/LevelModder/VBoxContainer/LevelVBox/VBoxContainer/DangerBox/TexPlus" to="UImaster/LevelModder" method="mouse_exited_plusORminus" binds= [ 0, true ]]
+[connection signal="mouse_entered" from="UImaster/LevelModder/VBoxContainer/PlayerVBox/VBoxContainer/MovementSpeedBox/TexMinus" to="UImaster/LevelModder" method="mouse_entered_plusORminus" binds= [ 1, false ]]
+[connection signal="mouse_exited" from="UImaster/LevelModder/VBoxContainer/PlayerVBox/VBoxContainer/MovementSpeedBox/TexMinus" to="UImaster/LevelModder" method="mouse_exited_plusORminus" binds= [ 1, false ]]
+[connection signal="mouse_entered" from="UImaster/LevelModder/VBoxContainer/PlayerVBox/VBoxContainer/MovementSpeedBox/TexPlus" to="UImaster/LevelModder" method="mouse_entered_plusORminus" binds= [ 1, true ]]
+[connection signal="mouse_exited" from="UImaster/LevelModder/VBoxContainer/PlayerVBox/VBoxContainer/MovementSpeedBox/TexPlus" to="UImaster/LevelModder" method="mouse_exited_plusORminus" binds= [ 1, true ]]

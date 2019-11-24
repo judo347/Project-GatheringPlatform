@@ -3,6 +3,7 @@ extends Node
 var is_player_touching_converter = false
 var is_player_touching_charModder = false
 var is_palyer_touching_uniqueAbilities = false
+var is_palyer_touching_levelModder = false
 
 func show_ui_player_is_touching():
 	if is_player_touching_charModder:
@@ -11,3 +12,5 @@ func show_ui_player_is_touching():
 		get_parent().get_node("UImaster").show_MaterialConverter()
 	elif is_palyer_touching_uniqueAbilities:
 		get_parent().get_node("UImaster").show_UniqueAbilities()
+	elif is_palyer_touching_levelModder:
+		get_parent().get_node("UImaster").show_LevelModder()

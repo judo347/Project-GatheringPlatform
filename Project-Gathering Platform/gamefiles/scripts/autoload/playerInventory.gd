@@ -11,13 +11,13 @@ var material_stone_count_level_collected = 0
 var skillpoints = 12 #TODO DEBUG: default = 0
 
 func add_skillpoint():
-	skillpoints =+ 1
+	skillpoints += 1
 
 func add_skillpoints(amount):
 	skillpoints = skillpoints + amount
 	
 func remove_skillpoint():
-	skillpoints =- 1
+	skillpoints -= 1
 
 func remove_skillpoints(amount):
 	skillpoints = skillpoints - amount
