@@ -17,6 +17,8 @@ var is_sliding_left
 
 var motion = Vector2()
 
+onready var music_manager = get_parent().get_node("MusicManager")
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	get_node("Sprite").texture = playerData.texture
@@ -75,6 +77,7 @@ func slide(delta):
 					is_sliding_left = true
 				
 				is_sliding = true
+				music_manager.slide()
 				print("Slide activated")
 	
 	var current_position = get_global_position()
@@ -166,3 +169,4 @@ func _kill_player():
 func jump():
 	motion.y = JUMP_HEIGHT
 	jumps_used = jumps_used + 1
+	music_manager.jump()

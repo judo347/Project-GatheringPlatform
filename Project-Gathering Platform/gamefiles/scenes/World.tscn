@@ -1,4 +1,4 @@
-[gd_scene load_steps=52 format=2]
+[gd_scene load_steps=53 format=2]
 
 [ext_resource path="res://gamefiles/scripts/Benches.gd" type="Script" id=1]
 [ext_resource path="res://gamefiles/scripts/bench_converter.gd" type="Script" id=2]
@@ -37,6 +37,7 @@
 [ext_resource path="res://resources/01/UIMinus001.png" type="Texture" id=35]
 [ext_resource path="res://resources/01/UIPlus001.png" type="Texture" id=36]
 [ext_resource path="res://gamefiles/scripts/CharPathFinding.gd" type="Script" id=37]
+[ext_resource path="res://gamefiles/scenes/game_objects/MusicManager.tscn" type="PackedScene" id=38]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 64, 32 )
@@ -225,6 +226,7 @@ shape = SubResource( 7 )
 texture = ExtResource( 14 )
 
 [node name="Portal" type="Area2D" parent="."]
+editor/display_folded = true
 position = Vector2( 672, 64 )
 script = ExtResource( 15 )
 __meta__ = {
@@ -243,6 +245,7 @@ format = 1
 tile_data = PoolIntArray( -196607, 0, 0, -196606, 0, 0, -196605, 0, 0, -196604, 0, 0, -65543, 0, 0, -65542, 0, 0, -65541, 0, 0, -65540, 0, 0, -131061, 0, 0, 196596, 0, 0, 196597, 0, 0, 196598, 0, 0, 131079, 0, 0, 131080, 0, 0, 131081, 0, 0, 131082, 0, 0, 131083, 0, 0, 458740, 0, 0, 458741, 0, 0, 458742, 0, 0, 458743, 0, 0, 458744, 0, 0, 458745, 0, 0, 458746, 0, 0, 458747, 0, 0, 458748, 0, 0, 458749, 0, 0, 458750, 0, 0, 458751, 0, 0, 393216, 0, 0, 393217, 0, 0, 393218, 0, 0, 393219, 0, 0, 393220, 0, 0, 393221, 0, 0, 393222, 0, 0, 393223, 0, 0, 393224, 0, 0, 393225, 0, 0, 393226, 0, 0, 393227, 0, 0 )
 
 [node name="UImaster" type="Node" parent="."]
+editor/display_folded = true
 script = ExtResource( 18 )
 
 [node name="MaterialConverter" type="Panel" parent="UImaster"]
@@ -795,6 +798,8 @@ loop = false
 
 [node name="Sprite" type="Sprite" parent="CharPathFinding/Slot2To3/PathFollow2D"]
 visible = false
+
+[node name="MusicManager" parent="." instance=ExtResource( 38 )]
 [connection signal="body_entered" from="CharacterSelection/Slot1" to="CharacterSelection" method="_on_Area2D_body_entered" binds= [ 1 ]]
 [connection signal="body_exited" from="CharacterSelection/Slot1" to="CharacterSelection" method="_on_Area2D_body_exited" binds= [ 1 ]]
 [connection signal="body_entered" from="CharacterSelection/Slot2" to="CharacterSelection" method="_on_Area2D_body_entered" binds= [ 2 ]]

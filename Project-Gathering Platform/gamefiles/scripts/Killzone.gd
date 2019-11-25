@@ -11,4 +11,7 @@ func _on_Killzone_ground_body_entered(body):
 	# Death penalty
 	playerInventory.collect_materials(false)
 	
+	# Death sound
+	playerData.shouldPlayDeathSound = true
+	
 	get_tree().change_scene("gamefiles/scenes/World.tscn")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://gamefiles/scripts/level_generator.gd" type="Script" id=1]
 [ext_resource path="res://gamefiles/tilesets/tileset02.tres" type="TileSet" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://resources/01/Material003.png" type="Texture" id=6]
 [ext_resource path="res://resources/01/Material001.png" type="Texture" id=7]
 [ext_resource path="res://gamefiles/scripts/Killzone.gd" type="Script" id=8]
+[ext_resource path="res://gamefiles/scenes/game_objects/MusicManager.tscn" type="PackedScene" id=9]
 
 [sub_resource type="LineShape2D" id=1]
 
@@ -19,7 +20,6 @@ tile_set = ExtResource( 2 )
 format = 1
 
 [node name="Player" parent="." instance=ExtResource( 3 )]
-editor/display_folded = true
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2( -64, -128 )
@@ -29,6 +29,7 @@ drag_margin_top = 1.0
 drag_margin_bottom = 1.0
 
 [node name="PermanentUI" type="Node2D" parent="Player/Camera2D"]
+editor/display_folded = true
 position = Vector2( -1024, -598 )
 script = ExtResource( 4 )
 __meta__ = {
@@ -127,7 +128,6 @@ margin_bottom = 39.0
 text = "x"
 
 [node name="Killzone_ground" type="Area2D" parent="."]
-editor/display_folded = true
 position = Vector2( 4256, 640 )
 __meta__ = {
 "_edit_group_": true
@@ -139,4 +139,6 @@ shape = SubResource( 1 )
 script = ExtResource( 8 )
 
 [node name="Materials" type="Node2D" parent="."]
+
+[node name="MusicManager" parent="." instance=ExtResource( 9 )]
 [connection signal="body_entered" from="Killzone_ground" to="Killzone_ground/CollisionShape2D" method="_on_Killzone_ground_body_entered"]

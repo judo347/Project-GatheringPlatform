@@ -2,6 +2,7 @@ extends Node
 
 var currentCharacter = enums.CharacterEnum.ONE
 var texture = load("res://resources/01/Character001.png")
+var shouldPlayDeathSound = false
 
 # Should be incremented each time a level is completed.
 var levels_completed = 0
