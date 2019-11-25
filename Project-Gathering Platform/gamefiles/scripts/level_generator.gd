@@ -1,5 +1,6 @@
 extends Node
 
+var level_finish_scene_path = "res://gamefiles/scenes/game_objects/LevelFinish.tscn"
 onready var map = get_node("TileMap")
 onready var materials_parent = get_node("Materials")
 
@@ -25,9 +26,21 @@ func populate_scene():
 	for material in materials_generated:
 		place_material(material, utilities.get_rand_material_enum())
 
-	# place_material(Vector2(200, 0), enums.MaterialEnum.GRASS)
-	# place_material_with_amount(Vector2(200, -100), enums.MaterialEnum.STONE, 10)
-	# place_material(Vector2(200, 100), enums.MaterialEnum.WOOD)
+	# Place finish
+	var level_finish_scene = load(level_finish_scene_path)
+	var coord_lasttile = tiles_generated.back()
+	var level_finish_scene_instanced = level_finish_scene.instance()
+
+	# Calculate position
+	var sprite_size_vector = level_finish_scene_instanced.get_node("Sprite").get_rect().size
+	var world_pos = map.map_to_world(coord_lasttile)
+	var spawn_position = Vector2(world_pos.x + (sprite_size_vector.x /2), world_pos.y + (sprite_size_vector.y /2))
+	
+	# Set postition
+	level_finish_scene_instanced.global_translate(spawn_position)
+	
+	# Add to level
+	get_parent().add_child(level_finish_scene_instanced)
 
 # Places a tile on the given position
 # params: pos: Vector2(x,y)
