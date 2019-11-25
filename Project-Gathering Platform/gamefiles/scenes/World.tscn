@@ -245,7 +245,6 @@ format = 1
 tile_data = PoolIntArray( -196607, 0, 0, -196606, 0, 0, -196605, 0, 0, -196604, 0, 0, -65543, 0, 0, -65542, 0, 0, -65541, 0, 0, -65540, 0, 0, -131061, 0, 0, 196596, 0, 0, 196597, 0, 0, 196598, 0, 0, 131079, 0, 0, 131080, 0, 0, 131081, 0, 0, 131082, 0, 0, 131083, 0, 0, 458740, 0, 0, 458741, 0, 0, 458742, 0, 0, 458743, 0, 0, 458744, 0, 0, 458745, 0, 0, 458746, 0, 0, 458747, 0, 0, 458748, 0, 0, 458749, 0, 0, 458750, 0, 0, 458751, 0, 0, 393216, 0, 0, 393217, 0, 0, 393218, 0, 0, 393219, 0, 0, 393220, 0, 0, 393221, 0, 0, 393222, 0, 0, 393223, 0, 0, 393224, 0, 0, 393225, 0, 0, 393226, 0, 0, 393227, 0, 0 )
 
 [node name="UImaster" type="Node" parent="."]
-editor/display_folded = true
 script = ExtResource( 18 )
 
 [node name="MaterialConverter" type="Panel" parent="UImaster"]
@@ -370,6 +369,7 @@ margin_bottom = 64.0
 texture = ExtResource( 22 )
 
 [node name="CharModder" type="Panel" parent="UImaster"]
+editor/display_folded = true
 visible = false
 margin_right = 240.0
 margin_bottom = 240.0
@@ -608,7 +608,6 @@ margin_right = 139.0
 margin_bottom = 39.0
 
 [node name="UIFullscreens" type="Node2D" parent="UImaster"]
-editor/display_folded = true
 
 [node name="AchievementMenu" type="Panel" parent="UImaster/UIFullscreens"]
 editor/display_folded = true
@@ -626,6 +625,7 @@ margin_bottom = 896.0
 [node name="VBoxContainer" type="VBoxContainer" parent="UImaster/UIFullscreens/AchievementMenu/ScrollContainer"]
 
 [node name="LevelModder" type="Panel" parent="UImaster"]
+editor/display_folded = true
 margin_right = 224.0
 margin_bottom = 128.0
 script = ExtResource( 34 )

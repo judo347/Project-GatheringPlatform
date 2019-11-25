@@ -8,9 +8,14 @@
 
 config_version=4
 
-_global_script_classes=[  ]
+_global_script_classes=[ {
+"base": "Reference",
+"class": "Achievement",
+"language": "GDScript",
+"path": "res://gamefiles/scripts/classes/Achievement.gd"
+} ]
 _global_script_class_icons={
-
+"Achievement": ""
 }
 
 [application]
@@ -27,6 +32,7 @@ global_variables="*res://gamefiles/scripts/autoload/global_variables.gd"
 playerData="*res://gamefiles/scripts/autoload/playerData.gd"
 utilities="*res://gamefiles/scripts/autoload/utilities.gd"
 resource_lib="*res://gamefiles/scripts/autoload/resource_lib.gd"
+achievements="*res://gamefiles/scripts/autoload/achievements.gd"
 
 [input]
 

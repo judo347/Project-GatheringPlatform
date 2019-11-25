@@ -56,6 +56,7 @@ func hide_UniqueAbilities():
 	get_node("UniqueAbilities").hide()
 	
 func show_AchievementMenu():
+	get_node("UIFullscreens/AchievementMenu").refresh_achievements()
 	get_node("UIFullscreens/AchievementMenu").show()
 	
 func hide_AchievementMenu():
