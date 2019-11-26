@@ -12,6 +12,9 @@ func _ready():
 
 func populate_scene():
 	
+	# Pick tileset
+	pick_tileset()
+	
 	# Generate tiles
 	var tiles_generated = TilePlacementGenerator.generate_tiles()
 	
@@ -41,6 +44,15 @@ func populate_scene():
 	
 	# Add to level
 	get_parent().add_child(level_finish_scene_instanced)
+
+# Currently done randomly
+func pick_tileset():
+	var randNumber = randi() % 2
+	
+	if randNumber == 1:
+		map.set_tileset(resource_lib.tiles_tileset02)
+	else:
+		map.set_tileset(resource_lib.tiles_tileset03)
 
 # Places a tile on the given position
 # params: pos: Vector2(x,y)
