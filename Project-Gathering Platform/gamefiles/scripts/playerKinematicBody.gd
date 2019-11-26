@@ -2,7 +2,8 @@ extends KinematicBody2D
 
 const UP = Vector2(0, -1)
 const GRAVITY_ACC = 20
-const MOVEMENTSPEED = 400
+const BASE_MOVEMENTSPEED = 400
+var movementspeed = BASE_MOVEMENTSPEED
 const JUMP_HEIGHT = -800
 const SLIDE_DISTANCE = 400
 const SLIDE_SPEED = 600
@@ -23,6 +24,13 @@ onready var music_manager = get_parent().get_node("MusicManager")
 func _ready():
 	
 	scene_check()
+	
+	if playerData.isInLevel:
+		movementspeed = BASE_MOVEMENTSPEED + (100 * playerData.levelMod_player_movementspeedPoints)
+	else:
+		movementspeed = BASE_MOVEMENTSPEED
+	
+	print("Bonus: ", playerData.levelMod_player_movementspeedPoints)
 	
 	get_node("Sprite").texture = playerData.texture
 	if get_parent().name == "Level":
@@ -51,10 +59,10 @@ func _physics_process(delta):
 	motion.y += GRAVITY_ACC
 	
 	if Input.is_action_pressed("ui_right"):
-		motion.x = MOVEMENTSPEED
+		motion.x = movementspeed
 		is_facing_right = true
 	elif Input.is_action_pressed("ui_left"):
-		motion.x = -MOVEMENTSPEED
+		motion.x = -movementspeed
 		is_facing_right = false
 	else:
 		motion.x = 0
