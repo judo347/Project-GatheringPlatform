@@ -625,7 +625,6 @@ margin_bottom = 896.0
 [node name="VBoxContainer" type="VBoxContainer" parent="UImaster/UIFullscreens/AchievementMenu/ScrollContainer"]
 
 [node name="LevelModder" type="Panel" parent="UImaster"]
-editor/display_folded = true
 margin_right = 224.0
 margin_bottom = 128.0
 script = ExtResource( 34 )
@@ -638,7 +637,7 @@ margin_bottom = 40.0
 
 [node name="LevelVBox" type="VBoxContainer" parent="UImaster/LevelModder/VBoxContainer"]
 margin_right = 196.0
-margin_bottom = 50.0
+margin_bottom = 86.0
 
 [node name="Label" type="Label" parent="UImaster/LevelModder/VBoxContainer/LevelVBox"]
 margin_right = 196.0
@@ -648,7 +647,7 @@ text = "Level"
 [node name="VBoxContainer" type="VBoxContainer" parent="UImaster/LevelModder/VBoxContainer/LevelVBox"]
 margin_top = 18.0
 margin_right = 196.0
-margin_bottom = 50.0
+margin_bottom = 86.0
 
 [node name="DangerBox" type="HBoxContainer" parent="UImaster/LevelModder/VBoxContainer/LevelVBox/VBoxContainer"]
 margin_right = 196.0
@@ -679,10 +678,40 @@ margin_right = 129.0
 margin_bottom = 32.0
 texture = ExtResource( 36 )
 
-[node name="PlayerVBox" type="VBoxContainer" parent="UImaster/LevelModder/VBoxContainer"]
-margin_top = 54.0
+[node name="MaterialYieldBox" type="HBoxContainer" parent="UImaster/LevelModder/VBoxContainer/LevelVBox/VBoxContainer"]
+margin_top = 36.0
 margin_right = 196.0
-margin_bottom = 104.0
+margin_bottom = 68.0
+
+[node name="Label" type="Label" parent="UImaster/LevelModder/VBoxContainer/LevelVBox/VBoxContainer/MaterialYieldBox"]
+margin_top = 9.0
+margin_right = 87.0
+margin_bottom = 23.0
+text = "Material yield"
+
+[node name="TexMinus" type="TextureRect" parent="UImaster/LevelModder/VBoxContainer/LevelVBox/VBoxContainer/MaterialYieldBox"]
+margin_left = 91.0
+margin_right = 123.0
+margin_bottom = 32.0
+texture = ExtResource( 35 )
+
+[node name="Value" type="Label" parent="UImaster/LevelModder/VBoxContainer/LevelVBox/VBoxContainer/MaterialYieldBox"]
+margin_left = 127.0
+margin_top = 9.0
+margin_right = 135.0
+margin_bottom = 23.0
+text = "0"
+
+[node name="TexPlus" type="TextureRect" parent="UImaster/LevelModder/VBoxContainer/LevelVBox/VBoxContainer/MaterialYieldBox"]
+margin_left = 139.0
+margin_right = 171.0
+margin_bottom = 32.0
+texture = ExtResource( 36 )
+
+[node name="PlayerVBox" type="VBoxContainer" parent="UImaster/LevelModder/VBoxContainer"]
+margin_top = 90.0
+margin_right = 196.0
+margin_bottom = 140.0
 
 [node name="Label" type="Label" parent="UImaster/LevelModder/VBoxContainer/PlayerVBox"]
 margin_right = 196.0
@@ -824,6 +853,10 @@ visible = false
 [connection signal="mouse_exited" from="UImaster/LevelModder/VBoxContainer/LevelVBox/VBoxContainer/DangerBox/TexMinus" to="UImaster/LevelModder" method="mouse_exited_plusORminus" binds= [ 0, false ]]
 [connection signal="mouse_entered" from="UImaster/LevelModder/VBoxContainer/LevelVBox/VBoxContainer/DangerBox/TexPlus" to="UImaster/LevelModder" method="mouse_entered_plusORminus" binds= [ 0, true ]]
 [connection signal="mouse_exited" from="UImaster/LevelModder/VBoxContainer/LevelVBox/VBoxContainer/DangerBox/TexPlus" to="UImaster/LevelModder" method="mouse_exited_plusORminus" binds= [ 0, true ]]
+[connection signal="mouse_entered" from="UImaster/LevelModder/VBoxContainer/LevelVBox/VBoxContainer/MaterialYieldBox/TexMinus" to="UImaster/LevelModder" method="mouse_entered_plusORminus" binds= [ 2, false ]]
+[connection signal="mouse_exited" from="UImaster/LevelModder/VBoxContainer/LevelVBox/VBoxContainer/MaterialYieldBox/TexMinus" to="UImaster/LevelModder" method="mouse_exited_plusORminus" binds= [ 2, false ]]
+[connection signal="mouse_entered" from="UImaster/LevelModder/VBoxContainer/LevelVBox/VBoxContainer/MaterialYieldBox/TexPlus" to="UImaster/LevelModder" method="mouse_entered_plusORminus" binds= [ 2, true ]]
+[connection signal="mouse_exited" from="UImaster/LevelModder/VBoxContainer/LevelVBox/VBoxContainer/MaterialYieldBox/TexPlus" to="UImaster/LevelModder" method="mouse_exited_plusORminus" binds= [ 2, true ]]
 [connection signal="mouse_entered" from="UImaster/LevelModder/VBoxContainer/PlayerVBox/VBoxContainer/MovementSpeedBox/TexMinus" to="UImaster/LevelModder" method="mouse_entered_plusORminus" binds= [ 1, false ]]
 [connection signal="mouse_exited" from="UImaster/LevelModder/VBoxContainer/PlayerVBox/VBoxContainer/MovementSpeedBox/TexMinus" to="UImaster/LevelModder" method="mouse_exited_plusORminus" binds= [ 1, false ]]
 [connection signal="mouse_entered" from="UImaster/LevelModder/VBoxContainer/PlayerVBox/VBoxContainer/MovementSpeedBox/TexPlus" to="UImaster/LevelModder" method="mouse_entered_plusORminus" binds= [ 1, true ]]
