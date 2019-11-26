@@ -134,7 +134,13 @@ func _select_character():
 	var isCollidingCharSlotTwo = get_parent().get_node("CharacterSelection").isPlayerCollidingWithCharSlot_two
 	var isCollidingCharSlotThree = get_parent().get_node("CharacterSelection").isPlayerCollidingWithCharSlot_three
 	
-	# TODO Check if the character slot is empty
+	# Check if the character slot is the one already selected
+	if isCollidingCharSlotOne && playerData.currentCharacter == enums.CharacterEnum.ONE:
+		return
+	if isCollidingCharSlotTwo && playerData.currentCharacter == enums.CharacterEnum.TWO:
+		return
+	if isCollidingCharSlotThree && playerData.currentCharacter == enums.CharacterEnum.THREE:
+		return
 	
 	if isCollidingCharSlotOne:
 		# Change the current character to character one
