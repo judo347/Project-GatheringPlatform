@@ -4,6 +4,9 @@ var currentCharacter = enums.CharacterEnum.ONE
 var texture = load("res://resources/01/Character001.png")
 var shouldPlayDeathSound = false
 
+var isInHomebase = false
+var isInLevel = false
+
 # Should be incremented each time a level is completed.
 var levels_completed = 0
 

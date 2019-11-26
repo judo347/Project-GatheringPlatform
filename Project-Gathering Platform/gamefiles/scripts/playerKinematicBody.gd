@@ -21,17 +21,29 @@ onready var music_manager = get_parent().get_node("MusicManager")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	
+	scene_check()
+	
 	get_node("Sprite").texture = playerData.texture
 	if get_parent().name == "Level":
 		.get_node("Camera2D").set_offset(Vector2(0, 350))
-	
+
+func scene_check():
+	if get_parent().name == "World":
+		playerData.isInHomebase = true
+		playerData.isInLevel = false
+	else:
+		playerData.isInHomebase = false
+		playerData.isInLevel = true
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
 
 	# Trigger character selection check and action
 	if Input.is_action_just_pressed("ui_action"):
-		_select_character()
-		interactable_object()
+		if playerData.isInHomebase:
+			_select_character()
+			interactable_object()
 	
 	if Input.is_action_just_pressed("ui_achievement"):
 		get_parent().get_node("UImaster").show_AchievementMenu()
