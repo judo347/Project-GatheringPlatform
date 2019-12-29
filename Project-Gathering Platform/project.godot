@@ -33,6 +33,8 @@ playerData="*res://gamefiles/scripts/autoload/playerData.gd"
 utilities="*res://gamefiles/scripts/autoload/utilities.gd"
 resource_lib="*res://gamefiles/scripts/autoload/resource_lib.gd"
 achievements="*res://gamefiles/scripts/autoload/achievements.gd"
+scene_changer="*res://gamefiles/scripts/autoload/scene_changer.gd"
+script_getter="*res://gamefiles/scripts/autoload/script_getter.gd"
 
 [editor_plugins]
 

@@ -16,12 +16,7 @@ var currentTheme
 
 func _process(delta):
 	
-	if playerData.shouldPlayDeathSound:
-		death()
-		playerData.shouldPlayDeathSound = false
-	
 	#Follow the player
-	#self.transform.set_position(player.get_position())
 	get_parent().get_node("MusicManager").set_position(player.get_position())
 	
 	if isInLevel:
@@ -76,3 +71,6 @@ func music_theme3():
 
 func pickup():
 	pickup.play(0)
+
+func is_playing_death():
+	return death.playing
