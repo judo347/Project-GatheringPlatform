@@ -5,6 +5,7 @@ onready var player = get_parent().get_node("Player")
 onready var jump = get_node("Jump")
 onready var slide = get_node("Slide")
 onready var death = get_node("Death")
+onready var pickup = get_node("Pickup")
 onready var music_theme1 = get_node("Theme1")
 onready var music_theme2 = get_node("Theme2")
 onready var music_theme3 = get_node("Theme3")
@@ -72,3 +73,6 @@ func music_theme2():
 func music_theme3():
 	music_theme3.play(0)
 	currentTheme = 3
+
+func pickup():
+	pickup.play(0)

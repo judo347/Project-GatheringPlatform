@@ -1,5 +1,7 @@
 extends Area2D
 
+onready var music_manager = get_parent().get_parent().get_node("MusicManager")
+
 var material_type = enums.MaterialEnum # Does not contain value, has to be set through function
 var material_amount = global_variables.material_default_yield
 
@@ -22,5 +24,6 @@ func _physics_process(delta):
 			playerInventory.add_collected_material(material_type, material_amount)
 			get_parent().get_parent().get_node("Player/Camera2D/PermanentUI").update_labels()
 			print("Added material to player inventory") # TODO replace with functionality
+			music_manager.pickup()
 			queue_free()
 	
