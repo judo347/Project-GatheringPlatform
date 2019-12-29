@@ -63,51 +63,52 @@ extents = Vector2( 32, 32 )
 [sub_resource type="RectangleShape2D" id=8]
 extents = Vector2( 64, 64 )
 
-[sub_resource type="Gradient" id=15]
+[sub_resource type="Gradient" id=9]
 offsets = PoolRealArray( 1.07449e-038, 1 )
 colors = PoolColorArray( 0.219608, 0.0156863, 0.196078, 1, 0.898039, 0, 1, 1 )
 
-[sub_resource type="GradientTexture" id=16]
-gradient = SubResource( 15 )
+[sub_resource type="GradientTexture" id=10]
+gradient = SubResource( 9 )
 
-[sub_resource type="ParticlesMaterial" id=17]
+[sub_resource type="ParticlesMaterial" id=11]
 flag_disable_z = true
 spread = 180.0
 gravity = Vector3( 0, 0, 0 )
 initial_velocity = 50.0
+angular_velocity = 4.61618e-025
 angular_velocity_random = 0.21
 orbit_velocity = 0.0
 orbit_velocity_random = 0.0
 scale = 6.95
 scale_random = 1.0
-color_ramp = SubResource( 16 )
+color_ramp = SubResource( 10 )
 
-[sub_resource type="Curve2D" id=9]
+[sub_resource type="Curve2D" id=12]
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, -672, 64, 0, 0, 0, 0, -576, 64, -28.1294, 35.1618, 28.1294, -35.1618, -544, -128, 0, 0, 0, 0, -448, -192, 0, 0, 0, 0, -320, -192, 0, 0, 0, 0, -192, -192, -42.1942, 0, 42.1942, 0, -96, -256, 0, 0, 0, 0, 64, -256, 0, 0, 0, 0, 192, -256 )
 }
 
-[sub_resource type="Curve2D" id=10]
+[sub_resource type="Curve2D" id=13]
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 192, -256, 0, 0, 0, 0, 64, -256, 62.5773, 1.36038, -62.5773, -1.36038, 0, -320, 0, 0, 0, 0, -192, -192, 0, 0, 0, 0, -448, -192, 68.0188, -12.2434, -68.0188, 12.2434, -512, -256, 0, 0, 0, 0, -576, 64, 0, 0, 0, 0, -672, 64 )
 }
 
-[sub_resource type="Curve2D" id=11]
+[sub_resource type="Curve2D" id=14]
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, -672, 64, 0, 0, 0, 0, -576, 64, -34.0094, 40.8113, 34.0094, -40.8113, -544, -128, 0, 0, 0, 0, -448, -192, 0, 0, 0, 0, -320, -192 )
 }
 
-[sub_resource type="Curve2D" id=12]
+[sub_resource type="Curve2D" id=15]
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 192, -256, 0, 0, 0, 0, 64, -256, 74.8207, -25.8471, -74.8207, 25.8471, -64, -320, 0, 0, 0, 0, -192, -192, 0, 0, 0, 0, -320, -192 )
 }
 
-[sub_resource type="Curve2D" id=13]
+[sub_resource type="Curve2D" id=16]
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, -320, -192, 0, 0, 0, 0, -448, -192, 43.7129, -58.7863, -43.7129, 58.7863, -544, -256, 0, 0, 0, 0, -576, 64, 0, 0, 0, 0, -672, 64 )
 }
 
-[sub_resource type="Curve2D" id=14]
+[sub_resource type="Curve2D" id=17]
 _data = {
 "points": PoolVector2Array(  )
 }
@@ -262,7 +263,7 @@ position = Vector2( 0, 4 )
 amount = 25
 lifetime = 1.3
 preprocess = 80.77
-process_material = SubResource( 17 )
+process_material = SubResource( 11 )
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource( 17 )
@@ -783,7 +784,7 @@ editor/display_folded = true
 script = ExtResource( 37 )
 
 [node name="Slot1To3" type="Path2D" parent="CharPathFinding"]
-curve = SubResource( 9 )
+curve = SubResource( 12 )
 
 [node name="PathFollow2D" type="PathFollow2D" parent="CharPathFinding/Slot1To3"]
 position = Vector2( -672, 64 )
@@ -795,7 +796,7 @@ visible = false
 texture = ExtResource( 14 )
 
 [node name="Slot3To1" type="Path2D" parent="CharPathFinding"]
-curve = SubResource( 10 )
+curve = SubResource( 13 )
 
 [node name="PathFollow2D" type="PathFollow2D" parent="CharPathFinding/Slot3To1"]
 position = Vector2( 192, -256 )
@@ -808,7 +809,7 @@ visible = false
 texture = ExtResource( 12 )
 
 [node name="Slot1To2" type="Path2D" parent="CharPathFinding"]
-curve = SubResource( 11 )
+curve = SubResource( 14 )
 
 [node name="PathFollow2D" type="PathFollow2D" parent="CharPathFinding/Slot1To2"]
 position = Vector2( -672, 64 )
@@ -820,7 +821,7 @@ visible = false
 texture = ExtResource( 13 )
 
 [node name="Slot3To2" type="Path2D" parent="CharPathFinding"]
-curve = SubResource( 12 )
+curve = SubResource( 15 )
 
 [node name="PathFollow2D" type="PathFollow2D" parent="CharPathFinding/Slot3To2"]
 position = Vector2( 192, -256 )
@@ -832,7 +833,7 @@ visible = false
 texture = ExtResource( 13 )
 
 [node name="Slot2To1" type="Path2D" parent="CharPathFinding"]
-curve = SubResource( 13 )
+curve = SubResource( 16 )
 
 [node name="PathFollow2D" type="PathFollow2D" parent="CharPathFinding/Slot2To1"]
 position = Vector2( -320, -192 )
@@ -844,7 +845,7 @@ visible = false
 texture = ExtResource( 12 )
 
 [node name="Slot2To3" type="Path2D" parent="CharPathFinding"]
-curve = SubResource( 14 )
+curve = SubResource( 17 )
 
 [node name="PathFollow2D" type="PathFollow2D" parent="CharPathFinding/Slot2To3"]
 position = Vector2( -320, -192 )

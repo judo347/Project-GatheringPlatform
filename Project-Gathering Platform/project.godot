@@ -34,6 +34,10 @@ utilities="*res://gamefiles/scripts/autoload/utilities.gd"
 resource_lib="*res://gamefiles/scripts/autoload/resource_lib.gd"
 achievements="*res://gamefiles/scripts/autoload/achievements.gd"
 
+[editor_plugins]
+
+enabled=PoolStringArray( "gut" )
+
 [input]
 
 ui_action={
