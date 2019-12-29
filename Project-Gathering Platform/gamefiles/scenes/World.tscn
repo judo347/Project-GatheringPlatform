@@ -246,6 +246,7 @@ shape = SubResource( 7 )
 texture = ExtResource( 14 )
 
 [node name="Portal" type="Area2D" parent="."]
+editor/display_folded = true
 position = Vector2( 672, 64 )
 script = ExtResource( 15 )
 __meta__ = {
