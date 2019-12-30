@@ -9,3 +9,6 @@ onready var tiles_tileset03 = load("res://gamefiles/tilesets/tileset03.tres")
 #onready var sound_music_theme3 = load("res://resources/01/sound/theme03.wav")
 #onready var sound_effect_jump = load("res://resources/01/sound/jump001.wav")
 #onready var sound_effect_slide = load("res://resources/01/sound/slide001.wav")
+
+#Transistions
+onready var transistions = load("res://gamefiles/scenes/transistions/transistions.tscn")
