@@ -128,8 +128,10 @@ _data = {
 [node name="World" type="Node"]
 
 [node name="MetaTextures" type="Node2D" parent="."]
+editor/display_folded = true
 
 [node name="Backgrounds" type="Node2D" parent="MetaTextures"]
+editor/display_folded = true
 
 [node name="upstairs" type="Sprite" parent="MetaTextures/Backgrounds"]
 position = Vector2( 0, -192 )
@@ -160,6 +162,7 @@ position = Vector2( -226, -61 )
 texture = ExtResource( 7 )
 
 [node name="Furnature" type="Node2D" parent="MetaTextures"]
+editor/display_folded = true
 
 [node name="upstairs_door01" type="Sprite" parent="MetaTextures/Furnature"]
 position = Vector2( -543.888, -176.794 )
@@ -252,6 +255,9 @@ position = Vector2( -610, 260 )
 [node name="Player" parent="." instance=ExtResource( 21 )]
 position = Vector2( 5, 360 )
 
+[node name="AmbientEffects" type="Node2D" parent="."]
+visible = false
+
 [node name="OutOfBounds" type="Node2D" parent="."]
 editor/display_folded = true
 visible = false
@@ -318,7 +324,6 @@ shape = SubResource( 7 )
 texture = ExtResource( 25 )
 
 [node name="Portal" type="Area2D" parent="."]
-editor/display_folded = true
 position = Vector2( -1750, 120 )
 script = ExtResource( 26 )
 __meta__ = {
