@@ -1,25 +1,54 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://resources/02/homebase/smoke1.png" type="Texture" id=1]
 
 [sub_resource type="Curve" id=1]
-_data = [ Vector2( 0.00428528, 0.00940001 ), 0.0, 0.0, 0, 0, Vector2( 1, 1 ), 0.0, 0.0, 0, 0 ]
+min_value = -40.0
+max_value = 40.0
+_data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 0.962639, 11.616 ), 0.0, 0.0, 0, 0 ]
 
 [sub_resource type="CurveTexture" id=2]
 curve = SubResource( 1 )
 
-[sub_resource type="ParticlesMaterial" id=3]
+[sub_resource type="Gradient" id=3]
+offsets = PoolRealArray( 0.308743, 0.685792 )
+colors = PoolColorArray( 1, 1, 1, 1, 1, 1, 1, 0 )
+
+[sub_resource type="GradientTexture" id=4]
+gradient = SubResource( 3 )
+
+[sub_resource type="Curve" id=5]
+min_value = -20.0
+max_value = 20.0
+_data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 0.0373612, -0.176001 ), 0.0, 0.0, 0, 0, Vector2( 0.395032, 2.288 ), 0.0, 0.0, 0, 0, Vector2( 1, -2.19998 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=6]
+curve = SubResource( 5 )
+
+[sub_resource type="Curve" id=7]
+_data = [ Vector2( 0.00428528, 0.00940001 ), 0.0, 0.0, 0, 0, Vector2( 1, 1 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=8]
+curve = SubResource( 7 )
+
+[sub_resource type="ParticlesMaterial" id=9]
 flag_disable_z = true
 gravity = Vector3( 0, 0, 0 )
-initial_velocity = 11.49
+angular_velocity_random = 0.46
+angular_velocity_curve = SubResource( 2 )
 orbit_velocity = 0.0
 orbit_velocity_random = 0.0
-scale_curve = SubResource( 2 )
+linear_accel = 0.1
+linear_accel_random = 0.33
+linear_accel_curve = SubResource( 6 )
+scale_curve = SubResource( 8 )
+color_ramp = SubResource( 4 )
 
-[node name="Node2D" type="Node2D"]
+[node name="SmokeEffect" type="Node2D"]
+scale = Vector2( 10, 10 )
 
 [node name="Particles2D" type="Particles2D" parent="."]
-amount = 20
-lifetime = 5.0
-process_material = SubResource( 3 )
+amount = 100
+lifetime = 24.42
+process_material = SubResource( 9 )
 texture = ExtResource( 1 )

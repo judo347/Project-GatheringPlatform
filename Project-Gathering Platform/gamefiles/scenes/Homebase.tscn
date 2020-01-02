@@ -190,6 +190,7 @@ current = true
 zoom = Vector2( 3, 3 )
 
 [node name="Benches" type="Node" parent="."]
+editor/display_folded = true
 script = ExtResource( 11 )
 
 [node name="Converter" type="Area2D" parent="Benches"]
