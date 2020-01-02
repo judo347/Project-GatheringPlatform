@@ -951,8 +951,33 @@ color = Color( 0.235294, 0.235294, 0.235294, 1 )
 
 [node name="Lights" type="Node2D" parent="Lighting"]
 
+[node name="Barrel_1" type="Light2D" parent="Lighting/Lights"]
+position = Vector2( -1154.82, -318.34 )
+texture = ExtResource( 52 )
+shadow_enabled = true
+
+[node name="Upstairs_door-1" type="Light2D" parent="Lighting/Lights"]
+position = Vector2( -706.817, -266.34 )
+texture = ExtResource( 52 )
+shadow_enabled = true
+
 [node name="Upstairs_door1-2" type="Light2D" parent="Lighting/Lights"]
 position = Vector2( -401.817, -266.34 )
+texture = ExtResource( 52 )
+shadow_enabled = true
+
+[node name="Upstairs_door2-3" type="Light2D" parent="Lighting/Lights"]
+position = Vector2( -111, -266.34 )
+texture = ExtResource( 52 )
+shadow_enabled = true
+
+[node name="Upstairs_door3-" type="Light2D" parent="Lighting/Lights"]
+position = Vector2( 181, -266.34 )
+texture = ExtResource( 52 )
+shadow_enabled = true
+
+[node name="Upstairs_stairs" type="Light2D" parent="Lighting/Lights"]
+position = Vector2( 719, -302.34 )
 texture = ExtResource( 52 )
 shadow_enabled = true
 
@@ -961,15 +986,55 @@ position = Vector2( -992, 480 )
 texture = ExtResource( 52 )
 shadow_enabled = true
 
+[node name="Downstairs_portalDoor" type="Light2D" parent="Lighting/Lights"]
+position = Vector2( -467.503, 208.56 )
+texture = ExtResource( 52 )
+shadow_enabled = true
+
+[node name="Downstairs_bar-bench" type="Light2D" parent="Lighting/Lights"]
+position = Vector2( 201, 211.5 )
+texture = ExtResource( 52 )
+shadow_enabled = true
+
+[node name="Downstairs_under_stairs" type="Light2D" parent="Lighting/Lights"]
+position = Vector2( 704, 192 )
+texture = ExtResource( 52 )
+shadow_enabled = true
+
 [node name="Outside_post1" type="Light2D" parent="Lighting/Lights"]
-position = Vector2( 1015.97, 246.652 )
+position = Vector2( 1013.45, 246 )
+texture = ExtResource( 52 )
+shadow_enabled = true
+
+[node name="Outside_post2" type="Light2D" parent="Lighting/Lights"]
+position = Vector2( 1289.49, 240.726 )
+texture = ExtResource( 52 )
+shadow_enabled = true
+
+[node name="Outside_post3" type="Light2D" parent="Lighting/Lights"]
+position = Vector2( 1624.25, 231.21 )
+texture = ExtResource( 52 )
+shadow_enabled = true
+
+[node name="Outside_post4" type="Light2D" parent="Lighting/Lights"]
+position = Vector2( 1892.91, 229.451 )
+texture = ExtResource( 52 )
+shadow_enabled = true
+
+[node name="Top_1" type="Light2D" parent="Lighting/Lights"]
+position = Vector2( 544, -800 )
+texture = ExtResource( 52 )
+shadow_enabled = true
+
+[node name="Top_2" type="Light2D" parent="Lighting/Lights"]
+position = Vector2( 736, -800 )
 texture = ExtResource( 52 )
 shadow_enabled = true
 
 [node name="Casters" type="Node2D" parent="Lighting"]
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="Lighting/Casters"]
-position = Vector2( -248, -226 )
+position = Vector2( -293, -379 )
 occluder = SubResource( 18 )
 [connection signal="body_entered" from="CharacterSelection/Slot1" to="CharacterSelection" method="_on_Area2D_body_entered" binds= [ 1 ]]
 [connection signal="body_exited" from="CharacterSelection/Slot1" to="CharacterSelection" method="_on_Area2D_body_exited" binds= [ 1 ]]
