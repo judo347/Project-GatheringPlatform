@@ -66,20 +66,20 @@ extents = Vector2( 64, 64 )
 [sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 64, 64 )
 
-[sub_resource type="RectangleShape2D" id=7]
+[sub_resource type="RectangleShape2D" id=5]
 extents = Vector2( 32, 32 )
 
-[sub_resource type="RectangleShape2D" id=8]
+[sub_resource type="RectangleShape2D" id=6]
 extents = Vector2( 64, 64 )
 
-[sub_resource type="Gradient" id=9]
+[sub_resource type="Gradient" id=7]
 offsets = PoolRealArray( 1.07449e-038, 1 )
 colors = PoolColorArray( 0.219608, 0.0156863, 0.196078, 1, 0.898039, 0, 1, 1 )
 
-[sub_resource type="GradientTexture" id=10]
-gradient = SubResource( 9 )
+[sub_resource type="GradientTexture" id=8]
+gradient = SubResource( 7 )
 
-[sub_resource type="ParticlesMaterial" id=11]
+[sub_resource type="ParticlesMaterial" id=9]
 flag_disable_z = true
 spread = 180.0
 gravity = Vector3( 0, 0, 0 )
@@ -90,60 +90,61 @@ orbit_velocity = 0.0
 orbit_velocity_random = 0.0
 scale = 6.95
 scale_random = 1.0
-color_ramp = SubResource( 10 )
+color_ramp = SubResource( 8 )
+
+[sub_resource type="Curve2D" id=10]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, -1368, 410, 0, 0, 0, 0, -1368, 410, 0, 0, 0, 0, -1208, 410, 0, 0, 0, 0, -1178, 320, 0, 0, 0, 0, -1158, 330, 0, 0, 0, 0, -1118, 330, 0, 0, 0, 0, -1108, 280, 0, 0, 0, 0, -1088, 280, 0, 0, 0, 0, -1058, 280, 0, 0, 0, 0, -1038, 210, 0, 0, 0, 0, -1018, 220, 0, 0, 0, 0, -988, 220, 0, 0, 0, 0, -978, 160, 0, 0, 0, 0, -958, 170, 0, 0, 0, 0, -408, 170, 0, 0, 0, 0, 262, 170, 0, 0, 0, 0, 322, -90, 0, 0, 0, 0, 382, -90, 0, 0, 0, 0, 412, -90, 0, 0, 0, 0, 422, -230, 0, 0, 0, 0, 452, -220, 0, 0, 0, 0, 482, -230, 0, 0, 0, 0, 392, -400, 0, 0, 0, 0, 312, -360, 0, 0, 0, 0, -838, -350, 0, 0, 0, 0, -868, -440, 0, 0, 0, 0, -928, -430, 0, 0, 0, 0, -1148, -410, 0, 0, 0, 0, -1198, -380, 0, 0, 0, 0, -1278, -360 )
+}
+
+[sub_resource type="Curve2D" id=11]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, -1160, -130, 0, 0, 0, 0, -1070, -130, 0, 0, 0, 0, -1040, -190, 0, 0, 0, 0, -1010, -180, 0, 0, 0, 0, -780, -210, 0, 0, 0, 0, -720, -200, 0, 0, 0, 0, -680, -130, 0, 0, 0, 0, 420, -130, 0, 0, 0, 0, 500, -170, 0, 0, 0, 0, 600, 0, 0, 0, 0, 0, 580, 10, 0, 0, 0, 0, 550, -10, 0, 0, 0, 0, 540, 140, 0, 0, 0, 0, 510, 130, 0, 0, 0, 0, 460, 120, 0, 0, 0, 0, 390, 390, 0, 0, 0, 0, -820, 400, 0, 0, 0, 0, -850, 420, 0, 0, 0, 0, -860, 460, 0, 0, 0, 0, -900, 470, 0, 0, 0, 0, -930, 450, 0, 0, 0, 0, -930, 510, 0, 0, 0, 0, -960, 520, 0, 0, 0, 0, -990, 520, 0, 0, 0, 0, -980, 590, 0, 0, 0, 0, -1020, 600, 0, 0, 0, 0, -1050, 590, 0, 0, 0, 0, -1070, 660, 0, 0, 0, 0, -1230, 640 )
+}
 
 [sub_resource type="Curve2D" id=12]
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, -672, 64, 0, 0, 0, 0, -576, 64, -28.1294, 35.1618, 28.1294, -35.1618, -544, -128, 0, 0, 0, 0, -448, -192, 0, 0, 0, 0, -320, -192, 0, 0, 0, 0, -192, -192, -42.1942, 0, 42.1942, 0, -96, -256, 0, 0, 0, 0, 64, -256, 0, 0, 0, 0, 192, -256 )
+"points": PoolVector2Array( 0, 0, 0, 0, -1230, 650, 0, 0, 0, 0, -1070, 630, 0, 0, 0, 0, -1050, 550, 0, 0, 0, 0, -1020, 590, 0, 0, 0, 0, -990, 590, 0, 0, 0, 0, -980, 510, 0, 0, 0, 0, -960, 530, 0, 0, 0, 0, -930, 530, 0, 0, 0, 0, -910, 440, 0, 0, 0, 0, -880, 470, 0, 0, 0, 0, -860, 470, 0, 0, 0, 0, -840, 370, 0, 0, 0, 0, -830, 420, 0, 0, 0, 0, 390, 390, 0, 0, 0, 0, 460, 120, 0, 0, 0, 0, 530, 140, 0, 0, 0, 0, 550, 0, 0, 0, 0, 0, 580, 10, 0, 0, 0, 0, 640, -110, 0, 0, 0, 0, 940, -130, 0, 0, 0, 0, 1000, -160, 0, 0, 0, 0, 1030, -210, 0, 0, 0, 0, 940, -290, 0, 0, 0, 0, 920, -340, 0, 0, 0, 0, 1030, -400, 0, 0, 0, 0, 1050, -460, 0, 0, 0, 0, 930, -500, 0, 0, 0, 0, 920, -650, 0, 0, 0, 0, 840, -610, 0, 0, 0, 0, 780, -620, 0, 0, 0, 0, 740, -610, 0, 0, 0, 0, 700, -560, 0, 0, 0, 0, 640, -570 )
 }
 
 [sub_resource type="Curve2D" id=13]
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, 192, -256, 0, 0, 0, 0, 64, -256, 62.5773, 1.36038, -62.5773, -1.36038, 0, -320, 0, 0, 0, 0, -192, -192, 0, 0, 0, 0, -448, -192, 68.0188, -12.2434, -68.0188, 12.2434, -512, -256, 0, 0, 0, 0, -576, 64, 0, 0, 0, 0, -672, 64 )
+"points": PoolVector2Array( 0, 0, 0, 0, -1150, -140, 0, 0, 0, 0, -1070, -130, 0, 0, 0, 0, -1040, -190, 0, 0, 0, 0, -1020, -160, 0, 0, 0, 0, -790, -190, 0, 0, 0, 0, -720, -230, 0, 0, 0, 0, -710, -120, 0, 0, 0, 0, 430, -130, 0, 0, 0, 0, 500, -180, 0, 0, 0, 0, 650, -100, 0, 0, 0, 0, 940, -110, 0, 0, 0, 0, 990, -140, 0, 0, 0, 0, 1030, -210, 0, 0, 0, 0, 940, -280, 0, 0, 0, 0, 910, -350, 0, 0, 0, 0, 1020, -400, 0, 0, 0, 0, 1050, -460, 0, 0, 0, 0, 930, -500, 0, 0, 0, 0, 910, -640, 0, 0, 0, 0, 840, -610, 0, 0, 0, 0, 780, -630, 0, 0, 0, 0, 740, -610, 0, 0, 0, 0, 700, -570, 0, 0, 0, 0, 620, -580 )
 }
 
 [sub_resource type="Curve2D" id=14]
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, -672, 64, 0, 0, 0, 0, -576, 64, -34.0094, 40.8113, 34.0094, -40.8113, -544, -128, 0, 0, 0, 0, -448, -192, 0, 0, 0, 0, -320, -192 )
+"points": PoolVector2Array( 0, 0, 0, 0, 640, -570, 0, 0, 0, 0, 710, -560, 0, 0, 0, 0, 750, -620, 0, 0, 0, 0, 780, -610, 0, 0, 0, 0, 820, -620, 0, 0, 0, 0, 900, -630, 0, 0, 0, 0, 920, -510, 0, 0, 0, 0, 1000, -510, 0, 0, 0, 0, 1050, -460, 0, 0, 0, 0, 1030, -400, 0, 0, 0, 0, 970, -410, 0, 0, 0, 0, 920, -360, 0, 0, 0, 0, 940, -300, 0, 0, 0, 0, 980, -320, 0, 0, 0, 0, 1030, -220, 0, 0, 0, 0, 980, -230, 0, 0, 0, 0, 950, -130, 0, 0, 0, 0, 660, -110, 0, 0, 0, 0, 600, -90, 0, 0, 0, 0, 600, 30, 0, 0, 0, 0, 560, 10, 0, 0, 0, 0, 540, 150, 0, 0, 0, 0, 450, 110, 0, 0, 0, 0, 390, 390, 0, 0, 0, 0, -820, 400, 0, 0, 0, 0, -850, 380, 0, 0, 0, 0, -870, 470, 0, 0, 0, 0, -920, 440, 0, 0, 0, 0, -930, 520, 0, 0, 0, 0, -990, 510, 0, 0, 0, 0, -980, 590, 0, 0, 0, 0, -1040, 560, 0, 0, 0, 0, -1070, 640, 0, 0, 0, 0, -1240, 640 )
 }
 
 [sub_resource type="Curve2D" id=15]
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, 192, -256, 0, 0, 0, 0, 64, -256, 74.8207, -25.8471, -74.8207, 25.8471, -64, -320, 0, 0, 0, 0, -192, -192, 0, 0, 0, 0, -320, -192 )
+"points": PoolVector2Array( 0, 0, 0, 0, 640, -580, 0, 0, 0, 0, 700, -570, 0, 0, 0, 0, 760, -620, 0, 0, 0, 0, 800, -620, 0, 0, 0, 0, 860, -620, 0, 0, 0, 0, 920, -640, 0, 0, 0, 0, 930, -500, 0, 0, 0, 0, 990, -520, 0, 0, 0, 0, 1050, -460, 0, 0, 0, 0, 1020, -400, 0, 0, 0, 0, 960, -420, 0, 0, 0, 0, 920, -360, 0, 0, 0, 0, 940, -290, 0, 0, 0, 0, 980, -310, 0, 0, 0, 0, 1040, -210, 0, 0, 0, 0, 980, -210, 0, 0, 0, 0, 940, -130, 0, 0, 0, 0, 670, -100, 0, 0, 0, 0, 530, -160, 0, 0, 0, 0, 420, -110, 0, 0, 0, 0, -690, -120, 0, 0, 0, 0, -720, -200, 0, 0, 0, 0, -790, -180, 0, 0, 0, 0, -1000, -170, 0, 0, 0, 0, -1050, -180, 0, 0, 0, 0, -1090, -130, 0, 0, 0, 0, -1150, -130 )
 }
 
-[sub_resource type="Curve2D" id=16]
-_data = {
-"points": PoolVector2Array( 0, 0, 0, 0, -320, -192, 0, 0, 0, 0, -448, -192, 43.7129, -58.7863, -43.7129, 58.7863, -544, -256, 0, 0, 0, 0, -576, 64, 0, 0, 0, 0, -672, 64 )
-}
-
-[sub_resource type="Curve2D" id=17]
-_data = {
-"points": PoolVector2Array(  )
-}
-
-[sub_resource type="SegmentShape2D" id=19]
+[sub_resource type="SegmentShape2D" id=16]
 a = Vector2( 0, -544 )
 b = Vector2( 0, 128 )
 
-[sub_resource type="SegmentShape2D" id=20]
+[sub_resource type="SegmentShape2D" id=17]
 a = Vector2( 96, 0 )
 b = Vector2( -80.9449, 13.6253 )
 
-[sub_resource type="CapsuleShape2D" id=21]
+[sub_resource type="CapsuleShape2D" id=18]
 radius = 28.2361
 height = 205.095
 
-[sub_resource type="SegmentShape2D" id=22]
+[sub_resource type="SegmentShape2D" id=19]
 a = Vector2( -50, 160 )
 b = Vector2( -50, -384 )
 
-[sub_resource type="OccluderPolygon2D" id=18]
+[sub_resource type="OccluderPolygon2D" id=20]
 polygon = PoolVector2Array( 0, 0, 64, 0, 64, 64, 0, 64 )
 
 [node name="World" type="Node"]
 
 [node name="MetaTextures" type="Node2D" parent="."]
+editor/display_folded = true
 
 [node name="Backgrounds" type="Node2D" parent="MetaTextures"]
 
@@ -278,6 +279,7 @@ shape = SubResource( 4 )
 position = Vector2( -610, 260 )
 
 [node name="AmbientEffects" type="Node2D" parent="."]
+editor/display_folded = true
 
 [node name="SmokeEffect" parent="AmbientEffects" instance=ExtResource( 23 )]
 position = Vector2( 992, -576 )
@@ -286,6 +288,7 @@ position = Vector2( 992, -576 )
 position = Vector2( 5, 360 )
 
 [node name="CharacterSelection" type="Node2D" parent="."]
+editor/display_folded = true
 script = ExtResource( 25 )
 
 [node name="Slot1" type="Area2D" parent="CharacterSelection"]
@@ -296,7 +299,7 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterSelection/Slot1"]
 scale = Vector2( 2, 2 )
-shape = SubResource( 7 )
+shape = SubResource( 5 )
 
 [node name="Sprite" type="Sprite" parent="CharacterSelection/Slot1"]
 texture = ExtResource( 26 )
@@ -310,7 +313,7 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterSelection/Slot2"]
 scale = Vector2( 2, 2 )
-shape = SubResource( 7 )
+shape = SubResource( 5 )
 
 [node name="Sprite" type="Sprite" parent="CharacterSelection/Slot2"]
 texture = ExtResource( 27 )
@@ -323,12 +326,13 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterSelection/Slot3"]
 scale = Vector2( 2, 2 )
-shape = SubResource( 7 )
+shape = SubResource( 5 )
 
 [node name="Sprite" type="Sprite" parent="CharacterSelection/Slot3"]
 texture = ExtResource( 28 )
 
 [node name="Portal" type="Area2D" parent="."]
+editor/display_folded = true
 position = Vector2( -1750, 120 )
 script = ExtResource( 29 )
 __meta__ = {
@@ -339,14 +343,14 @@ __meta__ = {
 texture = ExtResource( 30 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Portal"]
-shape = SubResource( 8 )
+shape = SubResource( 6 )
 
 [node name="Particles2D" type="Particles2D" parent="Portal"]
 position = Vector2( 0, 4 )
 amount = 25
 lifetime = 1.3
 preprocess = 80.77
-process_material = SubResource( 11 )
+process_material = SubResource( 9 )
 
 [node name="UImaster" type="Node" parent="."]
 editor/display_folded = true
@@ -861,10 +865,11 @@ texture = ExtResource( 49 )
 script = ExtResource( 50 )
 
 [node name="Slot1To3" type="Path2D" parent="CharPathFinding"]
-curve = SubResource( 12 )
+position = Vector2( 128, 230 )
+curve = SubResource( 10 )
 
 [node name="PathFollow2D" type="PathFollow2D" parent="CharPathFinding/Slot1To3"]
-position = Vector2( -672, 64 )
+position = Vector2( -1368, 410 )
 rotate = false
 loop = false
 
@@ -873,10 +878,10 @@ visible = false
 texture = ExtResource( 28 )
 
 [node name="Slot3To1" type="Path2D" parent="CharPathFinding"]
-curve = SubResource( 13 )
+curve = SubResource( 11 )
 
 [node name="PathFollow2D" type="PathFollow2D" parent="CharPathFinding/Slot3To1"]
-position = Vector2( 192, -256 )
+position = Vector2( -1160, -130 )
 rotation = 3.14159
 rotate = false
 loop = false
@@ -886,10 +891,10 @@ visible = false
 texture = ExtResource( 26 )
 
 [node name="Slot1To2" type="Path2D" parent="CharPathFinding"]
-curve = SubResource( 14 )
+curve = SubResource( 12 )
 
 [node name="PathFollow2D" type="PathFollow2D" parent="CharPathFinding/Slot1To2"]
-position = Vector2( -672, 64 )
+position = Vector2( -1230, 650 )
 rotate = false
 loop = false
 
@@ -898,10 +903,10 @@ visible = false
 texture = ExtResource( 27 )
 
 [node name="Slot3To2" type="Path2D" parent="CharPathFinding"]
-curve = SubResource( 15 )
+curve = SubResource( 13 )
 
 [node name="PathFollow2D" type="PathFollow2D" parent="CharPathFinding/Slot3To2"]
-position = Vector2( 192, -256 )
+position = Vector2( -1150, -140 )
 rotate = false
 loop = false
 
@@ -910,10 +915,10 @@ visible = false
 texture = ExtResource( 27 )
 
 [node name="Slot2To1" type="Path2D" parent="CharPathFinding"]
-curve = SubResource( 16 )
+curve = SubResource( 14 )
 
 [node name="PathFollow2D" type="PathFollow2D" parent="CharPathFinding/Slot2To1"]
-position = Vector2( -320, -192 )
+position = Vector2( 640, -570 )
 rotate = false
 loop = false
 
@@ -922,10 +927,10 @@ visible = false
 texture = ExtResource( 26 )
 
 [node name="Slot2To3" type="Path2D" parent="CharPathFinding"]
-curve = SubResource( 17 )
+curve = SubResource( 15 )
 
 [node name="PathFollow2D" type="PathFollow2D" parent="CharPathFinding/Slot2To3"]
-position = Vector2( -320, -192 )
+position = Vector2( 640, -580 )
 rotate = false
 loop = false
 
@@ -947,11 +952,11 @@ tile_data = PoolIntArray( -917497, 1, 0, -917496, 1, 0, -917495, 1, 0, -917494, 
 
 [node name="Chimney_right" type="CollisionShape2D" parent="InvisibleWalls/Perimeter/StaticBody2D"]
 position = Vector2( 1152, -704 )
-shape = SubResource( 19 )
+shape = SubResource( 16 )
 
 [node name="Barrel_walkway" type="CollisionShape2D" parent="InvisibleWalls/Perimeter/StaticBody2D"]
 position = Vector2( -928, -128 )
-shape = SubResource( 20 )
+shape = SubResource( 17 )
 
 [node name="Barrel_left" type="CollisionPolygon2D" parent="InvisibleWalls/Perimeter/StaticBody2D"]
 position = Vector2( -1166, -238 )
@@ -959,7 +964,6 @@ polygon = PoolVector2Array( -114, -146, -105.489, -133.961, -115.777, -101.38, -
 
 [node name="Barrel_right_bot" type="CollisionPolygon2D" parent="InvisibleWalls/Perimeter/StaticBody2D"]
 position = Vector2( -1150, -127 )
-scale = Vector2( 1, 1 )
 polygon = PoolVector2Array( 139.36, 12.8059, 130.224, 69.6077, 119.102, 62.0606, 128.635, 13.6003, 139.36, 12.8059 )
 
 [node name="Barrel_right_top" type="CollisionPolygon2D" parent="InvisibleWalls/Perimeter/StaticBody2D"]
@@ -968,11 +972,11 @@ polygon = PoolVector2Array( -1005.81, -314.303, -1023.02, -380.624, -1031.27, -3
 [node name="Barrel_top" type="CollisionShape2D" parent="InvisibleWalls/Perimeter/StaticBody2D"]
 position = Vector2( -1152.46, -382.147 )
 rotation = 1.57079
-shape = SubResource( 21 )
+shape = SubResource( 18 )
 
 [node name="left_topOfBarrel" type="CollisionShape2D" parent="InvisibleWalls/Perimeter/StaticBody2D"]
 position = Vector2( -1230, -544 )
-shape = SubResource( 22 )
+shape = SubResource( 19 )
 
 [node name="Lighting" type="Node2D" parent="."]
 
@@ -1066,7 +1070,7 @@ shadow_enabled = true
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="Lighting/Casters"]
 position = Vector2( -293, -379 )
-occluder = SubResource( 18 )
+occluder = SubResource( 20 )
 [connection signal="body_entered" from="CharacterSelection/Slot1" to="CharacterSelection" method="_on_Area2D_body_entered" binds= [ 1 ]]
 [connection signal="body_exited" from="CharacterSelection/Slot1" to="CharacterSelection" method="_on_Area2D_body_exited" binds= [ 1 ]]
 [connection signal="body_entered" from="CharacterSelection/Slot2" to="CharacterSelection" method="_on_Area2D_body_entered" binds= [ 2 ]]

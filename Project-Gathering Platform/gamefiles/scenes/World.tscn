@@ -784,7 +784,6 @@ margin_bottom = 32.0
 texture = ExtResource( 36 )
 
 [node name="CharPathFinding" type="Node" parent="."]
-editor/display_folded = true
 script = ExtResource( 37 )
 
 [node name="Slot1To3" type="Path2D" parent="CharPathFinding"]
