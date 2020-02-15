@@ -127,6 +127,7 @@ func slide(delta):
 
 func interactable_object():
 	get_parent().get_node("Benches").show_ui_player_is_touching()
+	get_parent().get_node("PortalDoor").activatePortal()
 
 func _select_character():
 	
