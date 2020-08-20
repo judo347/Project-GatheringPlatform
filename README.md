@@ -6,7 +6,7 @@ The gameloop is as following; You spawn in at a local tavern. Here you have seve
 
 ## Tavern
 
-![IMAGE OF TAVERN](https://github.com/judo347/Project-GatheringPlatform/GIFS/img/homebase.PNG)
+![IMAGE OF TAVERN](https://github.com/judo347/Project-GatheringPlatform/blob/master/GIFS/img/homebase.PNG)
 
 The tavern is your home. It is where you start and where you end up after finishing a level. The tavern provides benches used to upgrade [todo], several characters to choose from, and a portal which leads to the Level where resources is collected.
 
