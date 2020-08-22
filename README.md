@@ -30,6 +30,8 @@ The game contains three characters to freely choose from. You can change to any 
 
 ## Level [Replace title]
 
+![IMAGE OF MAT01](https://github.com/judo347/Project-GatheringPlatform/blob/master/Project-Gathering%20Platform/resources/01/Material001.png)![IMAGE OF MAT02](https://github.com/judo347/Project-GatheringPlatform/blob/master/Project-Gathering%20Platform/resources/01/Material002.png)![IMAGE OF MAT03](https://github.com/judo347/Project-GatheringPlatform/blob/master/Project-Gathering%20Platform/resources/01/Material003.png)
+
 [Intro: elements, goal]
 
 [Generation]
