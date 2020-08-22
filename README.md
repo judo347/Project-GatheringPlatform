@@ -16,9 +16,15 @@ The tavern is your home. It is where you start and where you end up after finish
 
 Benches are used to [..TODO]
 
-[BENCH 1] [BENCH 1 MENU]
+![IMAGE OF bench Converter](https://github.com/judo347/Project-GatheringPlatform/blob/master/Project-Gathering%20Platform/resources/01/BenchConverter001.png)
+
+[BENCH Converter] [BENCH 1 MENU]
 
 [BENCH 1 TEXT]
+
+![IMAGE OF bench Unique Abilities](https://github.com/judo347/Project-GatheringPlatform/blob/master/Project-Gathering%20Platform/resources/01/BenchUniqueAbilities001.png)
+
+![IMAGE OF bench Level mod](https://github.com/judo347/Project-GatheringPlatform/blob/master/Project-Gathering%20Platform/resources/01/BenchLevelMod001.png)
 
 [ETC....]
 
@@ -30,7 +36,7 @@ The game contains three characters to freely choose from. You can change to any 
 
 ## Level [Replace title]
 
-![IMAGE OF MAT01](https://github.com/judo347/Project-GatheringPlatform/blob/master/Project-Gathering%20Platform/resources/01/Material001.png)![IMAGE OF MAT02](https://github.com/judo347/Project-GatheringPlatform/blob/master/Project-Gathering%20Platform/resources/01/Material002.png)![IMAGE OF MAT03](https://github.com/judo347/Project-GatheringPlatform/blob/master/Project-Gathering%20Platform/resources/01/Material003.png)
+![IMAGE OF MAT01](https://github.com/judo347/Project-GatheringPlatform/blob/master/Project-Gathering%20Platform/resources/01/Material001.png)![IMAGE OF MAT02](https://github.com/judo347/Project-GatheringPlatform/blob/master/Project-Gathering%20Platform/resources/01/Material002.png)![IMAGE OF MAT03](https://github.com/judo347/Project-GatheringPlatform/blob/master/Project-Gathering%20Platform/resources/01/Material003.png)![IMAGE OF PODIUM](https://github.com/judo347/Project-GatheringPlatform/blob/master/Project-Gathering%20Platform/resources/01/LevelPodium001.png)
 
 [Intro: elements, goal]
 
