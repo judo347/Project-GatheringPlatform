@@ -40,7 +40,7 @@ The game contains three characters to freely choose from. You can change to any 
 
 ## Level [Replace title]
 
-![IMAGE OF TAVERN](https://github.com/judo347/Project-GatheringPlatform/blob/master/GIFS/img/level01.PNG)![IMAGE OF TAVERN](https://github.com/judo347/Project-GatheringPlatform/blob/master/GIFS/img/level02.PNG)
+![IMAGE OF LEVEL](https://github.com/judo347/Project-GatheringPlatform/blob/master/GIFS/img/level02.PNG)
 
 ![IMAGE OF MAT01](https://github.com/judo347/Project-GatheringPlatform/blob/master/Project-Gathering%20Platform/resources/01/Material001.png)![IMAGE OF MAT02](https://github.com/judo347/Project-GatheringPlatform/blob/master/Project-Gathering%20Platform/resources/01/Material002.png)![IMAGE OF MAT03](https://github.com/judo347/Project-GatheringPlatform/blob/master/Project-Gathering%20Platform/resources/01/Material003.png)![IMAGE OF PODIUM](https://github.com/judo347/Project-GatheringPlatform/blob/master/Project-Gathering%20Platform/resources/01/LevelPodium001.png)
 
@@ -56,8 +56,5 @@ The level gets harder each time the player completes it by reaching the podium.
 
 ## Outro
 
-[Everything is made by me] [Goal for project: learning]
-
-### Technical [REPLACE TITEL]
-
-[port from libgdx, tryout after Unity]
+Project: Gathering Platform was started with the aim of learning to develop games. Everything in the game is made by me - even the music. The game is made with Godot using their GDSCript language. This engine was chosen since it is the competitor to Unity and I wanted to try something other than Unity.
+The project at first was made with LibGdx and Java, and since ported to Godot and GDScript.
