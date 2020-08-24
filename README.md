@@ -34,7 +34,7 @@ The *Character Modification* bench, is used to unlock and give the player new ab
 
 ### Characters
 
-[PICTURE OF ALL THREE CHARS: side by side]
+![IMAGE OF CHAR01](https://github.com/judo347/Project-GatheringPlatform/blob/master/Project-Gathering%20Platform/resources/01/Character001.png)![IMAGE OF CHAR02](https://github.com/judo347/Project-GatheringPlatform/blob/master/Project-Gathering%20Platform/resources/01/Character002.png)![IMAGE OF CHAR03](https://github.com/judo347/Project-GatheringPlatform/blob/master/Project-Gathering%20Platform/resources/01/Character003.png)
 
 The game contains three characters to freely choose from. You can change to any of them in the tavern. They currently have no differences, but this will be implemented in the future. [TODO is this true?]
 
