@@ -36,19 +36,21 @@ The *Character Modification* bench, is used to unlock and give the player new ab
 
 ![IMAGE OF CHAR01](https://github.com/judo347/Project-GatheringPlatform/blob/master/Project-Gathering%20Platform/resources/01/Character001.png)![IMAGE OF CHAR02](https://github.com/judo347/Project-GatheringPlatform/blob/master/Project-Gathering%20Platform/resources/01/Character002.png)![IMAGE OF CHAR03](https://github.com/judo347/Project-GatheringPlatform/blob/master/Project-Gathering%20Platform/resources/01/Character003.png)
 
-The game contains three characters to freely choose from. You can change to any of them in the tavern. They currently have no differences, but this will be implemented in the future. [TODO is this true?]
+The game contains three characters to freely choose from. You can change to any of them in the tavern. They currently have no differences, but this will be implemented in the future.
 
 ## Level [Replace title]
 
+![IMAGE OF TAVERN](https://github.com/judo347/Project-GatheringPlatform/blob/master/GIFS/img/level01.PNG)![IMAGE OF TAVERN](https://github.com/judo347/Project-GatheringPlatform/blob/master/GIFS/img/level02.PNG)
+
 ![IMAGE OF MAT01](https://github.com/judo347/Project-GatheringPlatform/blob/master/Project-Gathering%20Platform/resources/01/Material001.png)![IMAGE OF MAT02](https://github.com/judo347/Project-GatheringPlatform/blob/master/Project-Gathering%20Platform/resources/01/Material002.png)![IMAGE OF MAT03](https://github.com/judo347/Project-GatheringPlatform/blob/master/Project-Gathering%20Platform/resources/01/Material003.png)![IMAGE OF PODIUM](https://github.com/judo347/Project-GatheringPlatform/blob/master/Project-Gathering%20Platform/resources/01/LevelPodium001.png)
 
-[Intro: elements, goal]
+The level is where resources is collected. The level contains a series of platforms where resources are placed and has to be traversed with the goal of reaching the podium.
 
-[Generation]
+The level is generated based on several factors like the players jump height, abilities and other modifiers unlocked through benches in the tavern.
 
-[Parameters]
+The player will exit the level in two ways resulting in being teleported back to the tavern. Either by falling off a platform into the abyss or by touching the podium located at the end of the level. If the player falls of the platforms he will loose some percent of the resources collected - if the *No Death Penalty* has not been purchased.
 
-[Ways of leaving the level: dieing and completing it]
+The level gets harder each time the player completes it by reaching the podium. 
 
 
 
